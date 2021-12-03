@@ -7,7 +7,7 @@
   <meta charset="UTF-8" />
   <title>QuickQuiz | Tài khoản</title>
   <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
-  <link rel="stylesheet" href="../../css/Student/Account.css" />
+  <link rel="stylesheet" href="<?= base_url()?>/app/css/Student/Account.css" />
   <!-- Boxiocns CDN Link -->
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
     </div>
     <ul class="nav-links">
       <li>
-        <a href="./Home.php">
+        <a href="<?= base_url()?>/app/Views/Student/Home.php">
           <i class="bx bxs-home"></i>
           <span class="link_name">Trang chủ</span>
         </a>
@@ -32,7 +32,7 @@
       </li>
       <li>
         <div class="iocn-link">
-          <a href="./Discussion.php">
+          <a href="<?= base_url()?>/app/Views/Student/Discussion.php">
             <i class="bx bxl-telegram"></i>
             <span class="link_name">Thảo luận</span>
           </a>
@@ -47,7 +47,7 @@
       </li>
       <li>
         <div class="iocn-link">
-          <a href="./Analysis.php">
+          <a href="<?= base_url()?>/app/Views/Student/Analysis.php">
             <i class="bx bx-pie-chart-alt-2"></i>
             <span class="link_name">Thống kê</span>
           </a>
@@ -61,7 +61,7 @@
           </ul> -->
       </li>
       <li>
-        <a href="./Bookmark.php">
+        <a href="<?= base_url()?>/app/Views/Student/Bookmark.php">
           <i class="bx bxs-bookmarks"></i>
           <span class="link_name">Đánh dấu</span>
         </a>
@@ -70,7 +70,7 @@
         </ul>
       </li>
       <li>
-        <a href="./Account.php">
+        <a href="<?= base_url()?>/app/Views/Student/Account.php">
           <i class="bx bxs-user-circle"></i>
           <span class="link_name">Tài khoản</span>
         </a>
