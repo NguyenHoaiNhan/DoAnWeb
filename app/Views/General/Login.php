@@ -3,7 +3,7 @@
 
 <head>
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="../../Public/css/General/login.css">
+    <link rel="stylesheet" href="<?= base_url()?>/app/css/General/login.css">
 </head>
 
 <body>

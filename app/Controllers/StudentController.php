@@ -14,10 +14,20 @@ class StudentController extends BaseController
 
     public function index()
     {
-        return view('emp');
+        return view('Student/Home');
     }
 
+    public function home()
+    {
+        return View('Student/Home');
+    }
 
+    public function bookmark()
+    {
+        return View('Student/Bookmark');
+    }
+
+    // Lấy dữ liệu cho phần infinitive scroll pagination của Home.php
     public function fetch()
     {
         if (isset($_POST['limit'])) {
