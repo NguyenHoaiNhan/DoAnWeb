@@ -55,7 +55,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'asdf@1234',
-        'database' => 'quickquiz',
+        'database' => 'doan',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

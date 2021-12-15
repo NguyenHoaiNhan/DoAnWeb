@@ -47,8 +47,9 @@ body {
 }
 
 .quiz-num .num:hover{
-  background-color: tomato;
-  color: white;
+  /* background-color: white; */
+  /* color: white; */
+  box-shadow: 0 0 5px gold, 0 0 7px purple;
 }
 
 /* .quiz-num .num p{
@@ -127,21 +128,23 @@ body {
 }
 
 .column{
-    background-color: green;
+    background-color: white;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     justify-content: center;
     padding: 1px 3px;
+    border: solid 1px tomato;
 }
 
 .column:hover{
-    background-color: tomato;
+    background-color: white;
+    box-shadow: 0 0 5px gold, 0 0 7px purple;
 }
 
 .column h2{
-    color: white;
+    color: black;
 }
 
 #timer{

@@ -22,7 +22,7 @@ $(document).ready(function () {
         var b = $(".grid-subjects").height();
         if ($(window).scrollTop() + $(window).height() - 500 > $(".data-item-wrapper").height() && action == 'inactive') {
             lazzyLoader();
-            console.log("Bắt tính hiệu scroll quá dữ liệu");
+            console.log("executing pagination process...");
             action = 'active';
             start = start + limit;
             setTimeout(function () {
@@ -52,7 +52,7 @@ $(document).ready(function () {
                         action = 'active';
                 }else{
                     data.forEach(function (obj) {
-                        prepareItemData(obj.topic, obj.title, obj.total, obj.duration, obj.highest, obj.joiner);
+                        prepareItemData(obj.description, obj.title, obj.total, obj.time, obj.participant);
                         action = 'inactive';
                     });
                 }
@@ -60,7 +60,8 @@ $(document).ready(function () {
         })
     };
 
-    function prepareItemData(topic, title, questionNum, duration, topScore, joinNum) {
+    function prepareItemData(topic, title, questionNum, duration, participant) {
+        var topScore = 9.2;
         var item = `
                                 <div class="grid-item">
                                 <div class="quiz-name">
@@ -91,7 +92,7 @@ $(document).ready(function () {
                                     </p>
                                     <p>
                                     <span>Tham gia</span><br />
-                                    <span>` + joinNum + `</span>
+                                    <span>` + participant + `</span>
                                     </p>
                                 </div>
                                 </div>

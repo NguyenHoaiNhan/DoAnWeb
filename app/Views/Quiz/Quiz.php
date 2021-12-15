@@ -107,18 +107,18 @@
         </div>
         <div class="quiz-option">
             <div class="row">
-                <div class="column">
+                <div class="column op1">
                     <h2>A)</h2>
                 </div>
-                <div class="column">
+                <div class="column opt2">
                     <h2>B)</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="column">
+                <div class="column opt3">
                     <h2>C)</h2>
                 </div>
-                <div class="column">
+                <div class="column opt4">
                     <h2>D)</h2>
                 </div>
             </div>
