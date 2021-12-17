@@ -70,8 +70,8 @@
                 <p>Số câu hỏi: <b>50 câu</b></p>
               </div>
               <div class="quiz-action">
-                <button onclick="window.alert('ok')" id="btn_bookmark">Đánh dấu</button>
-                <button id="btn_join" onclick="window.alert('ok')">
+                <button class="btn_bookmark">Đánh dấu</button>
+                <button class="btn_join" onclick="window.alert('ok')">
                   Thi ngay
                 </button>
               </div>

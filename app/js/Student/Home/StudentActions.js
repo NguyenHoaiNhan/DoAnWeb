@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $('#btn_join').click(function(){
+    $('.btn_join').click(function(){
         startQuiz();
     });
 
-    $('#btn_bookmark').click(function(){
+    $('.btn_bookmark').click(function(){
        
     });
 })
