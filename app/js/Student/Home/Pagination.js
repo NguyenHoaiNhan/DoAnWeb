@@ -2,13 +2,7 @@ $(document).ready(function () {
     var limit = 6;
     var start = 0;
     var action = 'inactive';
-
-    $('.grid-item').click(function () {
-        // $('.grid-subjects').append(readyComponent);
-        var a = $(window).scrollTop() + $(window).height() - 500;
-        var b = $(".data-item-wrapper").height();
-        alert("a : b" + " " + a + " " + b);
-    });
+    var testDB;
 
     lazzyLoader();
 
@@ -18,8 +12,8 @@ $(document).ready(function () {
     }
 
     $(window).scroll(function () {
-        var a = $(window).scrollTop() + $(window).height() + 500;
-        var b = $(".grid-subjects").height();
+        // var a = $(window).scrollTop() + $(window).height() + 500;
+        // var b = $(".grid-subjects").height();
         if ($(window).scrollTop() + $(window).height() - 500 > $(".data-item-wrapper").height() && action == 'inactive') {
             lazzyLoader();
             console.log("executing pagination process...");
@@ -47,6 +41,7 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 var DataLength = Object.keys(data).length;
+                testDB = data;
                 if(DataLength == 0){
                     $('.loading-items-space').html('<h4 style="font-size: 14px; text-align: center;font-weight: 800;">Xin lỗi nhưng không còn bài trắc nghiệm nào khác!</h4>');
                         action = 'active';

@@ -17,8 +17,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+// $routes->setDefaultController('Home');
+// $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -31,9 +31,21 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->post('/student/scrollPage', 'StudentController::fetch');
+// $routes->get('/', 'Home::index');
+// $routes->get('/', 'Student\HomeController::index');
+$routes->post('/student/scrollPage', 'Student\HomeController::fetch');
 
+$routes->group('student', function($routes){
+    $routes->get('home', 'Student\HomeController::index');
+    $routes->get('discussion', 'Student\DiscussionController::index');
+    $routes->get('bookmark', 'Student\BookmarkController::index');
+    $routes->get('account', 'Student\AccountController::index');
+    $routes->get('startquiz', 'Student\QuizController::startQuiz');
+});
+
+$routes->group('coach', function($routes){
+    $routes->get('home', 'Coach\HomeController::index');
+});
 
 /*
  * --------------------------------------------------------------------
