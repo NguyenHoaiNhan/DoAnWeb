@@ -7,7 +7,7 @@ class DiscussionController extends BaseController
 {
     public function index()
     {
-        $PageInfo = $this->loadMasterLayout('Thảo luận', 'Discussion', 'Discussion');
+        $PageInfo = $this->loadMasterLayout('Thảo luận', 'Discussion', 'Discussion', 0);
         return view('Student/main', $PageInfo);
     }
 }

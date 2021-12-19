@@ -15,7 +15,7 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $PageInfo = $this->loadMasterLayout('Trang chủ', 'Home', 'Home');
+        $PageInfo = $this->loadMasterLayout('Trang chủ', 'Home', 'Home', 0);
         return view('Student/main', $PageInfo);
     }
 

@@ -7,7 +7,7 @@ class AccountController extends BaseController
 {
     public function index()
     {
-        $PageInfo = $this->loadMasterLayout('Tài khoản', 'Account', 'Account');
+        $PageInfo = $this->loadMasterLayout('Tài khoản', 'Account', 'Account', 0);
         return view('Student/main', $PageInfo);
     }
 }

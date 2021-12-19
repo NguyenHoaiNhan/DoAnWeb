@@ -50,11 +50,16 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
 
-    public function loadMasterLayout($PageTitle, $PageCSS, $PageContent)
+    public function loadMasterLayout($PageTitle, $PageCSS, $PageContent, $isCoach)
     {
         $PageInfo['PageTitle'] = $PageTitle;
         $PageInfo['PageCSS'] = $PageCSS;
         $PageInfo['PageContent'] = View('Student/Pages/'.$PageContent);
+
+        if ($isCoach == 1) {
+            $PageInfo['PageContent'] = View('Coach/Pages/' . $PageContent);
+        } else $PageInfo['PageContent'] = View('Student/Pages/' . $PageContent);
+
         return $PageInfo;
     }
 }

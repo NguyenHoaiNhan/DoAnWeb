@@ -71,7 +71,7 @@
               </div>
               <div class="quiz-action">
                 <button class="btn_bookmark">Đánh dấu</button>
-                <button class="btn_join" onclick="window.alert('ok')">
+                <button class="btn_join">
                   Thi ngay
                 </button>
               </div>
@@ -101,7 +101,9 @@
           <div class="subject-info"></div>
         </div>
       </div>
-      <h3 class="grid-subject-title" onclick="window.alert('ok')" >CÁC NỘI DUNG ĐANG CÓ</h3>
+
+      <h3 class="grid-subject-title">CÁC NỘI DUNG ĐANG CÓ</h3>
+
       <div class="data-item-wrapper">
         <div class="grid-subjects">
           <!-- <div class="grid-item">
@@ -138,38 +140,6 @@
               </div>
             </div>
           </div> -->
-          <!-- <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div> -->
         </div>
         <div class="loading-items-space">
           <!-- <p>loading...</p> -->
@@ -183,10 +153,13 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/SubjectSlider.js"></script>
   <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/Pagination.js"></script>
-  <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/StudentActions.js"></script>
-
   <script>
-    $('#btn_join').click(function(){
-      alert('ok');
-    })
+    function startQuiz(clickedID) {
+      console.log('startQuiz...');
+      window.location = 'startquiz?id=' + clickedID;
+    }
+
+    function bookmarkQuiz(clickedID) {
+      window.alert('bookmark quiz... : ' + clickedID);
+    }
   </script>

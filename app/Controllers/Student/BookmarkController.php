@@ -8,7 +8,7 @@ class BookmarkController extends BaseController
 {
     public function index()
     {
-        $PageInfo = $this->loadMasterLayout('Đánh dấu', 'Bookmark', 'Bookmark');
+        $PageInfo = $this->loadMasterLayout('Đánh dấu', 'Bookmark', 'Bookmark', 0);
         return view('Student/main', $PageInfo);
     }
 }

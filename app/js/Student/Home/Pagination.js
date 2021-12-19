@@ -47,7 +47,7 @@ $(document).ready(function () {
                         action = 'active';
                 }else{
                     data.forEach(function (obj) {
-                        prepareItemData(obj.description, obj.title, obj.total, obj.time, obj.participant);
+                        prepareItemData(obj.id, obj.description, obj.title, obj.total, obj.time, obj.participant);
                         action = 'inactive';
                     });
                 }
@@ -55,7 +55,7 @@ $(document).ready(function () {
         })
     };
 
-    function prepareItemData(topic, title, questionNum, duration, participant) {
+    function prepareItemData(questionID, topic, title, questionNum, duration, participant) {
         var topScore = 9.2;
         var item = `
                                 <div class="grid-item">
@@ -71,8 +71,8 @@ $(document).ready(function () {
                                     <p>Số câu hỏi: <b>` + questionNum + ` câu</b></p>
                                 </div>
                                 <div class="quiz-action">
-                                    <button id="btn_bookmark" onclick="">Đánh dấu</button>
-                                    <button id="btn_join_list">
+                                    <button id="` + questionID + `" class="btn_bookmark" onclick="bookmarkQuiz(this.id)">Đánh dấu</button>
+                                    <button id="` + questionID + `" class="btn_join" onclick="startQuiz(this.id)">
                                     Thi ngay
                                     </button>
                                 </div>
@@ -95,6 +95,14 @@ $(document).ready(function () {
         `;
         $('.grid-subjects').append(item);
     }
+
+    // $('.btn_join').click(function(){
+    //     var getUrl = window.location;
+    //     // var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    //     var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+    //     var DestinationScript = baseUrl + "app/js/Student/Home/StudentActions.js";
+    //     alert(DestinationScript);
+    // });
 });
 
 
