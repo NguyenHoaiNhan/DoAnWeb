@@ -33,8 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 // $routes->get('/', 'Student\HomeController::index');
-$routes->post('/student/scrollPage', 'Student\HomeController::fetch');
 
+// routes Hoai Nhna
+$routes->post('/student/scrollPage', 'Student\HomeController::fetch');
 $routes->group('student', function ($routes) {
     $routes->get('home', 'Student\HomeController::index');
     $routes->get('discussion', 'Student\DiscussionController::index');
@@ -45,21 +46,30 @@ $routes->group('student', function ($routes) {
     $routes->get('result', 'Student\QuizController::showResult');
 });
 
-$routes->group('coach', function ($routes) {
-    $routes->get('home', 'Coach\HomeController::index');
-    $routes->get('bank', 'Coach\QuestionbankController::index');
-    $routes->get('addquestion', 'Coach\AddquestionController::index');
-    $routes->get('personal', 'Coach\PersonalController::index');
-    $routes->get('editquestion', 'Coach\AddquestionController::edit');
-    $routes->get('edit', 'Coach\AddquestionController::editQuestion');
-});
-
-// routes Ngà:
+// routes Tan Nga
+$routes->post('/coach/scrollPage', 'Coach\QuizgeneratorController::fetch');
 $routes->post('/coach/add', 'Coach\AddquestionController::addQuestion');
+$routes->post('/coach/addquiz', 'Coach\QuizgeneratorController::add_quiz');
+
 $routes->post('/question', 'Coach\QuestionbankController::fetch_c');
+$routes->post('/previewquiz', 'Coach\AddquestionController::previewQuiz');
+$routes->post('/coach/update', 'Coach\AddquestionController::updateQuestion');
+$routes->post('/search', 'Coach\QuestionbankController::fetch_s');
 $routes->post('/question1', 'Coach\QuestionbankController::fetch_d');
 $routes->post('/tag', 'Coach\QuestionbankController::fetch_t');
 
+$routes->group('coach', function ($routes) {
+    $routes->get('home', 'Coach\HomeController::index');
+    $routes->get('bank', 'Coach\QuestionbankController::index');
+    $routes->get('quizgenerator', 'Coach\QuizgeneratorController::index');
+    $routes->get('prequiz', 'Coach\QuizgeneratorController::preQuiz');
+    $routes->get('addquestion', 'Coach\AddquestionController::index');
+    $routes->get('addquiz', 'Coach\QuizgeneratorController::addquiz');
+    $routes->get('personal', 'Coach\PersonalController::index');
+    $routes->get('editquestion', 'Coach\AddquestionController::edit');
+    $routes->get('edit', 'Coach\AddquestionController::editQuestion');
+    $routes->get('delete', 'Coach\AddquestionController::deleteQuestion');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing

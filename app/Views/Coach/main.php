@@ -24,26 +24,26 @@
             <span class="logo_name">QuickQuiz</span>
         </div>
         <ul class="nav-links">
-            <li>
+            <!-- <li>
                 <a href="personal">
                     <i class="bx bxs-layout"></i>
                     <span class="link_name">Kênh cá nhân</span>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <div class="iocn-link">
                     <a href="bank">
                         <i class="bx bxs-buildings"></i>
                         <span class="link_name">Ngân hàng câu hỏi</span>
                     </a>
-                    <i class="bx bxs-chevron-down arrow"></i>
+                    <!-- <i class="bx bxs-chevron-down arrow"></i> -->
                 </div>
-                <ul class="sub-menu">
+                <!-- <ul class="sub-menu">
                     <li><a class="link_name" href="#">Category</a></li>
                     <li><a href="#">Chuyên đề logarit</a></li>
                     <li><a href="#">Chuyên đề hình học</a></li>
                     <li><a href="#">Chuyên đề số phức</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li>
                 <div class="iocn-link">
@@ -60,7 +60,7 @@
             <li><a href="#">Card Design</a></li>
           </ul> -->
             </li>
-            <li>
+            <!-- <li>
                 <a href="<?= base_url() ?>/app/Views/Coach/discussion.php">
                     <i class="bx bxl-telegram"></i>
                     <span class="link_name">Thảo luận</span>
@@ -68,8 +68,8 @@
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Analytics</a></li>
                 </ul>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <a href="<?= base_url() ?>/app/Views/Coach/analyst.php">
                     <i class="bx bx-bar-chart"></i>
                     <span class="link_name">Phân tích</span>
@@ -77,7 +77,7 @@
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Analytics</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li>
                 <a href="<?= base_url() ?>/app/Views/Coach/account.php">
                     <i class="bx bxs-user-circle"></i>

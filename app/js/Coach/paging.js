@@ -2,19 +2,6 @@ $(document).ready(function () {
     var limit = 6;
     var start = 0;
     var action = 'inactive';
-    /* let itemPerPage = 6;
-    let currentPage = 1;
-    let start_c = 0;
-    let end = itemPerPage;
-    const btnNext = document.querySelector('.btn-next');
-    const btnPrev = document.querySelector('.btn-prev'); */
-
-    /*   function getCurrentPage(currentPage) {
-          start_c = (currentPage - 1) * itemPerPage;
-          end = currentPage * itemPerPage;
-          console.log(currentPage);
-      } */
-
     lazzyLoader();
 
     if (action == 'inactive') {
@@ -39,8 +26,73 @@ $(document).ready(function () {
     // SUPPORT FUNCTIONS 
     function lazzyLoader() {
         var output = '';
-        output += "<p>loading...</p>";
+        output += `<p style="text-align: center;">LOADING...</p>`;
         $(".loading").html(output);
+    }
+
+    $('#btn_search').click(function () {
+        let search = $('#tf_search').val();
+        searchData(search);
+    })
+
+    function searchData(search) {
+        $.ajax({
+            url: "/search",
+            method: "POST",
+            dataType: 'json',
+            data: { search: search },
+            success: function (data) {
+                data_length = Object.keys(data).length;
+                console.log('Da lay ' + data_length);
+                if (data_length == 0) {
+                    $('.loading').html('<h4 style="font-size: 14px; text-align: center;font-weight: 800;">Xin lỗi nhưng không còn bài trắc nghiệm nào khác!</h4>');
+                    action = 'active';
+                } else {
+                    data.forEach(function (obj) {
+                        prepareQuestion1(obj.id, obj.question, obj.filter, obj.A, obj.B, obj.C, obj.D);
+                        action = 'inactive';
+                    });
+                }
+            }
+        }
+
+        )
+    }
+    function prepareQuestion1(id, question, filter, A, B, C, D) {
+        var k_question = katex.renderToString(question);
+        var k_A = katex.renderToString(A);
+        var k_B = katex.renderToString(B);
+        var k_C = katex.renderToString(C);
+        var k_D = katex.renderToString(D);
+        var item = `
+                    <li class="q-item" style="padding-left: 10px;">           
+                        <div id="filter">
+                            <h4 style="display: inline-block">` + filter + `</h4>
+                            <a id = `+ id + ` class="btn btn-success float-right" onclick="test(this.id)">Sửa</a>
+                            <a id = `+ id + ` class="btn btn-danger float-right del" onclick="test1(this.id)">Xóa</a>
+                        </div>
+                        <div class="qtion">
+                            <h5>Câu hỏi: </h5><p>` + k_question + `</p>                           
+                        </div>
+                        
+                        <div id="option-a">
+                            <p>A: `+ k_A + `</p>
+                        </div>
+                        <div id="option-b">
+                            <p>B: `+ k_B + `</p>
+                        </div>
+                        <div id="option-c">
+                            <p>C: `+ k_C + `</p>
+                        </div>
+                        <div id="option-d">
+                            <p>D: `+ k_D + `</p>
+                        </div>
+                        <input id="`+ id + `" type="checkbox" onchange="test2(this.id)"> Chọn câu hỏi</input>
+                      </li>
+
+        `;
+        $('#question').remove();
+        $('#question1').append(item);
     }
 
     function load_data(limit, start) {
@@ -68,21 +120,6 @@ $(document).ready(function () {
     load_data();
 
 
-    function load_data_t() {
-        $.ajax({
-            url: "/tag",
-            method: "POST",
-            dataType: 'json',
-            data: {},
-            success: function (data) {
-                data.forEach(function (obj) {
-                    prepareTagName(obj.tagname);
-                })
-            }
-        })
-    };
-    load_data_t();
-
     function prepareQuestion(id, question, filter, A, B, C, D) {
         var k_question = katex.renderToString(question);
         var k_A = katex.renderToString(A);
@@ -93,8 +130,8 @@ $(document).ready(function () {
                     <li class="q-item" style="padding-left: 10px;">           
                         <div id="filter">
                             <h4 style="display: inline-block">` + filter + `</h4>
-                            <a id="`+ id + `" class="btn btn-success float-right" onclick="test(this.id)">Sửa</a>
-                            <a class="btn btn-danger float-left del" id="del" onclick="">Xóa</a>
+                            <a id = `+ id + ` class="btn btn-success float-right" onclick="test(this.id)">Sửa</a>
+                            <a id = `+ id + ` class="btn btn-danger float-right del" onclick="test1(this.id)">Xóa</a>
                         </div>
                         <div class="qtion">
                             <h5>Câu hỏi: </h5><p>` + k_question + `</p>                           
@@ -112,7 +149,7 @@ $(document).ready(function () {
                         <div id="option-d">
                             <p>D: `+ k_D + `</p>
                         </div>
-                        <input type="checkbox"> Chọn câu hỏi</input>
+                        <input id="`+ id + `" type="checkbox" onchange="test2(this.id)"> Chọn câu hỏi</input>
                       </li>
 
         `;

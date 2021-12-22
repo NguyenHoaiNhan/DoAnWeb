@@ -32,6 +32,18 @@ class QuestionbankController extends BaseController
             echo json_encode($data);
         }
     }
+    public function fetch_s()
+    {
+        if (isset($_POST['search'])) {
+            $search = $_POST['search'];
+
+
+            $model = new Quiz_model();
+            $data = $model->fetch_search($search);
+
+            echo json_encode($data);
+        }
+    }
     public function fetch_d()
     {
         $model = new Quiz_model();

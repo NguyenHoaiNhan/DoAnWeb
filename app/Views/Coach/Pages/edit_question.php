@@ -22,23 +22,27 @@
 </head>
 
 <body style="background-color: bisque;">
+
     <div class="success"></div>
-    <?php 
-       echo "<h1>".$subjects['subject']."</h1>"
-    ?>
     <div class="container">
         <form>
             <div class="form-group row" style="margin-top: 20px;">
+                <label for="filter" class="col-4 col-form-label">ID câu hỏi</label>
+                <div class="col-8">
+                    <textarea id="id" name="question" cols="40" rows="1" class="form-control"><?php echo $id ?></textarea>
+                </div>
+            </div>
+            <div class="form-group row" style="margin-top: 20px;">
                 <label for="filter" class="col-4 col-form-label">Filter</label>
                 <div class="col-8">
-                    <input id="filter" name="filter" placeholder="<?php $masterData['FilterData']?>" type="text" class="form-control">
+                    <textarea id="filter" name="question" cols="40" rows="1" class="form-control"><?php echo $filter ?></textarea>
                 </div>
             </div>
 
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="question" class="col-4 col-form-label">Nội dung câu hỏi</label>
                 <div class="col-8">
-                    <textarea id="question" name="question" cols="40" rows="3" class="form-control"><?php $masterData['Question'] ?></textarea>
+                    <textarea id="question" name="question" cols="40" rows="3" class="form-control"><?php echo $question ?></textarea>
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -49,7 +53,7 @@
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="A" class="col-4 col-form-label">A</label>
                 <div class="col-8">
-                    <textarea id="a-option" name="A" cols="40" rows="3" class="form-control"><?php $masterData['OptA'] ?></textarea>
+                    <textarea id="a-option" name="A" cols="40" rows="3" class="form-control"><?php echo $A ?></textarea>
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -60,7 +64,7 @@
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="B" class="col-4 col-form-label">B</label>
                 <div class="col-8">
-                    <textarea id="b-option" name="B" cols="40" rows="3" class="form-control"><?php $masterData['OptB'] ?></textarea>
+                    <textarea id="b-option" name="B" cols="40" rows="3" class="form-control"><?php echo $B ?></textarea>
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -71,7 +75,7 @@
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="c-option" class="col-4 col-form-label">C</label>
                 <div class="col-8">
-                    <textarea id="c-option" name="C" cols="40" rows="3" class="form-control"><?php $masterData['OptC'] ?></textarea>
+                    <textarea id="c-option" name="C" cols="40" rows="3" class="form-control"><?php echo $C ?></textarea>
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -82,7 +86,7 @@
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="d-option" class="col-4 col-form-label">D</label>
                 <div class="col-8">
-                    <textarea id="d-option" name="D" cols="40" rows="3" class="form-control"><?php $masterData['OptD'] ?></textarea>
+                    <textarea id="d-option" name="D" cols="40" rows="3" class="form-control"><?php echo $D ?></textarea>
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -93,7 +97,7 @@
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="answer" class="col-4 col-form-label">Đáp án</label>
                 <div class="col-8">
-                    <input id="answer" name="answer" placeholder="<?php $masterData['Answer'] ?>" type="text" class="form-control">
+                    <textarea id="answer" name="question" cols="40" rows="1" class="form-control"><?php echo $answer ?></textarea>
                 </div>
             </div>
             <!-- <div class="form-group row" style="margin-top: 20px;">
@@ -104,7 +108,7 @@
             </div> -->
             <div class="form-group row" style="margin-top: 20px;margin-bottom: 20px;">
                 <div class="offset-4 col-8">
-                    <div id="confirm" class="btn btn-primary">Cập nhật</div>
+                    <div id="update" class="btn btn-primary">Cập nhật</div>
                 </div>
             </div>
         </form>
@@ -112,5 +116,35 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/app/js/Coach/editquestion.js"></script>
+<script>
+    $('#update').click(function() {
+        var id = $('#id').val();
+        var question = $('#question').val().replace(/\\/g, "\\\\");
+        var filter = $('#filter').val().replace(/\\/g, "\\\\");
+        var opta = $('#a-option').val().replace(/\\/g, "\\\\");
+        var optb = $('#b-option').val().replace(/\\/g, "\\\\");
+        var optc = $('#c-option').val().replace(/\\/g, "\\\\");
+        var optd = $('#d-option').val().replace(/\\/g, "\\\\");
+        var answer = $('#answer').val().replace(/\\/g, "\\\\");
+        $.ajax({
+            url: "/coach/update",
+            method: "POST",
+            data: {
+                id: id,
+                question: question,
+                filter: filter,
+                opta: opta,
+                optb: optb,
+                optc: optc,
+                optd: optd,
+                answer: answer,
+            },
+            success: function(data) {
+                window.alert('Cập nhật thành công');
+                window.location = 'bank';
+            }
+        })
+    })
+</script>
 
 </html>
