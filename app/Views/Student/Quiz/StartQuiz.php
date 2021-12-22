@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar">
         <div class="quiz-num">
-            <div class="num" id="0">
+            <!-- <div class="num" id="0">
                 <p>1</p>
             </div>
             <div class="num" id="1">
@@ -116,14 +116,14 @@
             <div class="num"></div>
             <div class="num"></div>
             <div class="num"></div>
-            <div class="num"></div>
+            <div class="num"></div> -->
         </div>
         <div class="quiz-time">
-            <h3 id="hour" class="coundown-time">03</h3>
+            <h3 id="hour" class="coundown-time">00</h3>
             <p>:</p>
-            <h3 id="minute" class="coundown-time">10</h3>
+            <h3 id="minute" class="coundown-time">00</h3>
             <p>:</p>
-            <h3 id="second" class="coundown-time">13</h3>
+            <h3 id="second" class="coundown-time">07</h3>
         </div>
         <div class="quiz-action">
             <button id="btn_submit">Nộp bài</button>

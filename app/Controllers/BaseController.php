@@ -54,7 +54,7 @@ class BaseController extends Controller
     {
         $PageInfo['PageTitle'] = $PageTitle;
         $PageInfo['PageCSS'] = $PageCSS;
-        $PageInfo['PageContent'] = View('Student/Pages/'.$PageContent);
+        // $PageInfo['PageContent'] = View('Student/Pages/'.$PageContent);
 
         if ($isCoach == 1) {
             $PageInfo['PageContent'] = View('Coach/Pages/' . $PageContent);

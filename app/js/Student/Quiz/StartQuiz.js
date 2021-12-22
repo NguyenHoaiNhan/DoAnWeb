@@ -1,14 +1,14 @@
 $(document).ready(function () {
     var QuizList = [];
     var StudentChoice = [];
+
+    var QuestionPointer = { index: "" };
     var remainingHour = parseInt($('#hour').text());
     var remainingMinute = parseInt($('#minute').text());
     var remainingSecond = parseInt($('#second').text());
     var remainingTimeInSecond = takeDurationInSecond(remainingHour, remainingMinute, remainingSecond);
 
-    countdownTime(remainingTimeInSecond);
-    
-    $('.quiz-info').each(function(index){
+    $('.quiz-info').each(function (index) {
         QuizList.push({
             'id': $(this).children('#ques-id').text(),
             'content': $(this).children('#ques-content').text(),
@@ -20,42 +20,202 @@ $(document).ready(function () {
         })
     })
 
-    var DefautQuestionView = $('.quiz-num > :first').attr('id');
-    console.log(DefautQuestionView);
-    LoadQuestionView(DefautQuestionView, ...QuizList);
-    
-    $('.num').click(function(){
-        var clickedItem = $(this).attr('id');
-        LoadQuestionView(clickedItem, ...QuizList)
+    console.log(QuizList[0].content);
+
+    countdownTime(remainingTimeInSecond, QuizList.length, StudentChoice);
+
+    loadSideBar(...QuizList);
+
+    QuestionPointer.index = $('.quiz-num > :first').attr('id');
+    var DefaultQuestionID = QuestionPointer.index;
+    LoadQuestionView(DefaultQuestionID, '', ...QuizList);
+    // console.log("QuestionPointer: " + QuestionPointer);
+
+    // sự kiện khi bấm vào một câu hỏi
+    $('.num').click(function () {
+        QuestionPointer.index = $(this).attr('id');
+        var quesID = QuestionPointer.index;
+        var choosenOpt = getOptFromChoosenQuestion(quesID, ...StudentChoice);
+        console.log('click opt: ' + choosenOpt);
+        unhightlightOption();
+        LoadQuestionView(quesID, choosenOpt, ...QuizList);
     });
 
+    // sự kiện khi bấm vào 1 trong 4 câu trả lời
+    $('.column').click(function () {
+        var currentID = QuestionPointer.index;
+        var opt = $(this).attr('id');
+        unhightlightOption();
+        chooseAnswer(currentID, opt, StudentChoice);
+        hightlightChoosenOption(opt);
+        hightlightChoosenQuestion(currentID);
+    });
+
+    // sự kiện khi click nút Nộp bài
+    $('#btn_submit').click(function () {
+        hideInfo();
+        setTimeout(function(){
+            if(StudentChoice.length == 0){
+                alert('Cần chọn ít nhất một câu trước khi nộp bài!')
+            }else{
+
+                submitQuiz(QuizList.length, StudentChoice);
+            }
+        }, 10);
+        setTimeout(function(){
+            unhideInfo();
+        }, 20)
+    });
+
+    // xử lý sự kiên khi bấm nút Hủy
+    $('#btn_cancel').click(function(){
+        hideInfo();
+        setTimeout(function(){
+            if(StudentChoice.length == 0){
+                alert('Quá trình làm của bạn sẽ mất!\nBạn chắc chứ?');
+            }else{
+                cancelQuiz();
+            }
+        }, 10);
+        setTimeout(function(){
+            unhideInfo();
+        }, 20)
+    })
 
 });
 
+
+// XỬ LÝ NỘP BÀI VÀ HỦY
+
+function hideInfo(){
+    $('.quiz-content').css('display', 'none');
+}
+
+function unhideInfo(){
+    $('.quiz-content').css('display', '');
+}
+
+function submitQuiz(quizTotal, answerList) {
+    answerList.forEach(element => {
+        element.opt = classifyAnswer(element.opt);
+        console.log(element.id + "\t" + element.opt)
+    });
+
+    checkResult(quizTotal, answerList);
+    storeResultInLocal(answerList);
+}
+
+function storeResultInLocal(answerList){
+    localStorage.setItem('answerList', JSON.stringify(answerList));
+}
+
+function cancelQuiz(){
+    if(confirm('Quá trình làm bài của bạn sẽ không được lưu lại nếu thoát!\n Bạn chắc chứ?') == true){
+        location.href = "home";
+    }
+}
+
+function classifyAnswer(input_opt) {
+    var out_opt
+    switch (input_opt) {
+        case 'opta':
+            out_opt = 'a';
+            break;
+        case 'optb':
+            out_opt = 'b';
+            break;
+        case 'optc':
+            out_opt = 'c';
+            break;
+        case 'optd':
+            out_opt = 'd';
+            break;
+        default:
+            out_opt = 'err'
+    }
+    return out_opt;
+}
+
+function checkResult(quizTotal, submittedAnswerList){
+
+    // Lấy id của bài trắc nghiệm từ URL 
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const quizID = urlParams.get('id');
+
+    if(submittedAnswerList.length == 0){
+        alert('Bạn đã hoàn thành bài trắc nghiệm với kết quả: 0/' + quizTotal);
+    }else{
+        $.ajax({
+            type: 'POST',
+            url: 'submitquiz',
+            dataType: 'json',
+            data: {'quizID': quizID, 'answerList': submittedAnswerList},
+            success: function(data){
+                // console.log("Kết quả của bạn là: " + data);
+               alert('Bạn đã hoàn thành bài trắc nghiệm với kết quả: ' + data + "/" + quizTotal);
+            }
+        })
+    }
+    location.href = "result?id=" + quizID;
+}
+
+// CHỌN ĐÁP ÁN
+
+function chooseAnswer(quesID, answer, answerList) {
+    // Trả về 0 nếu cập nhật đáp án, 1 nếu là đáp án của câu chưa từng chọn
+    for (var i = 0; i < answerList.length; i++) {
+        if (answerList[i].id == quesID) {
+            answerList[i].opt = answer;
+            return 0;
+        }
+    }
+    answerList.push({
+        'id': quesID,
+        'opt': answer
+    });
+    return 1;
+}
+
 //  OBJECT ĐỂ LƯU TRỮ THÔNG TIN BÀI TRẮC NGHIỆM LẤY VỀ TỪ SERVER
 
-function Question(id, content, opta, optb, optc, optd){
+function Question(id, content, opta, optb, optc, optd) {
     this.id = id;
     this.content = content;
-    this.opta = opta; 
+    this.opta = opta;
     this.optb = optb;
     this.optc = optc;
     this.optd = optd;
 }
 
-function Choice(id, opt){
+function Choice(id, opt) {
     this.id = id;
     this.opt = opt;
 }
 
 // XỬ LÝ THỜI GIAN NỘP BÀI
 
-function countdownTime(remainingQuizTimeInSecond) {
+function countdownTime(remainingQuizTimeInSecond, quizTotal, answerList) {
     console.log('countdownTime...');
-    setInterval(() => {
+    var countdownLoop = setInterval(() => {
         remainingQuizTimeInSecond--;
         setQuizTime(takeHour(remainingQuizTimeInSecond), takeMinute(remainingQuizTimeInSecond), takeSecond(remainingQuizTimeInSecond));
+        if(remainingQuizTimeInSecond <= 5 && remainingQuizTimeInSecond >0){
+            console.log('Sắp hết thời gian...');
+            alertTime();
+        }
+        if(remainingQuizTimeInSecond == 0){
+            clearInterval(countdownLoop);
+            submitQuiz(quizTotal, answerList);
+        }
     }, 1000);
+    return countdownLoop;
+}
+
+function alertTime(){
+    $('#hour').css('color', 'red');
+    $('#minute').css('color', 'red');
+    $('#second').css('color', 'red');
 }
 
 function takeDurationInSecond(hour, minute, second) {
@@ -96,49 +256,42 @@ function setQuizTime(hour, minute, second) {
 
 // LOAD CÂU HỎI, LỰA CHỌN LÊN PAGE
 
-function LoadQuestionView(clickedItem, ...questionList) {
-    console.log('You clicked ' + clickedItem);
-    loadQuestion(clickedItem, ...questionList);
-    loadOption(clickedItem, ...questionList);
-}
-
-function loadSideBar(Duration, QuestNum) {
-    for (var i = 1; i <= QuestNum; i++) {
-        $('.quiz-num').append(
-            `
-                <div class="num" id="">
-                    <p></p>
-                </div>
-            `
-        );
-    }
-}
-
-function loadQuestion(quesID, ...questionList) {
-    var question = '';
-
-    for(var i = 0; i < questionList.length; i++){
-        if(quesID == questionList[i].id){
-            question = questionList[i].content;
+function getOptFromChoosenQuestion(quesID, ...ChoosenAnswerList) {
+    var choosenOpt = '';
+    for (var i = 0; i < ChoosenAnswerList.length; i++) {
+        if (quesID == ChoosenAnswerList[i].id) {
+            choosenOpt = ChoosenAnswerList[i].opt;
             break;
         }
     }
-
-    $('.quiz-question').html(
-        `   
-            <h1>` + katex.renderToString(question) + `</h1>
-        `
-    );
+    return choosenOpt;
 }
 
-function loadOption(quesID, ...questionList) {
+function loadSideBar(...questionList) {
+    console.log('loadSideBar...');
+    for (var i = 0; i < questionList.length; i++) {
+        $('.quiz-num').append(
+            `
+                <div class="num" id="` + questionList[i].id + `">
+                    <p>` + (i + 1) + `</p>
+                </div>
+            `
+        );
+    };
+}
+
+function LoadQuestionView(clickedItem, choosenOpt, ...questionList) {
+    console.log('You clicked ' + clickedItem);
+
+    var question = '';
     var opta = '';
     var optb = '';
     var optc = '';
     var optd = '';
 
-    for(var i = 0; i < questionList.length; i++){
-        if(quesID == questionList[i].id){
+    for (var i = 0; i < questionList.length; i++) {
+        if (clickedItem == questionList[i].id) {
+            question = questionList[i].content;
             opta = questionList[i].opta;
             optb = questionList[i].optb;
             optc = questionList[i].optc;
@@ -147,21 +300,43 @@ function loadOption(quesID, ...questionList) {
         }
     }
 
+    loadQuestion(question);
+
+    loadOption(opta, optb, optc, optd, choosenOpt);
+}
+
+function loadQuestion(questionContent) {
+    $('.quiz-question').html(
+        `   
+            <h1>` + katex.renderToString(questionContent) + `</h1>
+        `
+    );
+}
+
+function loadOption(opta, optb, optc, optd, choosenOpt) {
     $('#opta h2').text('A) ' + opta);
     $('#optb h2').text('B) ' + optb);
     $('#optc h2').text('C) ' + optc);
     $('#optd h2').text('D) ' + optd);
+
+    hightlightChoosenOption(choosenOpt);
 }
 
-function setChoicePointer(quesID, oldOpt, newOpt, ...ChoosenAnswer){
-
-}   
-
-function hightlightChoosenQuestion(){
-
+function hightlightChoosenQuestion(quesID) {
+    console.log('hightlightChoosenQuestion: ' + quesID);
+    if (quesID != '') {
+        $("#" + quesID).css('background-color', 'pink');
+    }
 }
 
-function hightlightChoosenOption(){
-    
+function unhightlightOption() {
+    $(".column").css('background-color', 'white');
+}
+
+function hightlightChoosenOption(opt) {
+    console.log('hightlightChoosenOption: ' + opt);
+    if (opt != '') {
+        $("#" + opt).css('background-color', 'tomato');
+    }
 }
 

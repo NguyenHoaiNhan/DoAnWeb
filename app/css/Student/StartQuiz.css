@@ -158,15 +158,17 @@ body {
     justify-content: center;
     padding: 1px 3px;
     border: solid 1px tomato;
+    background-color: white;
 }
 
 .column:hover{
-    background-color: white;
+    /* background-color: white; */
     box-shadow: 0 0 5px gold, 0 0 7px purple;
 }
 
 .column h2{
     color: black;
+    /* background-color: tomato; */
 }
 
 

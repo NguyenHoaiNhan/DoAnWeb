@@ -31,7 +31,7 @@
           <li><a class="link_name" href="#">Category</a></li>
         </ul>
       </li>
-      <li class="navigation-item" id="Discussion">
+      <!-- <li class="navigation-item" id="Discussion">
         <div class="iocn-link">
           <a href="discussion">
             <i class="bx bxl-telegram"></i>
@@ -45,22 +45,22 @@
           <li><a href="#">VatLy10 - Con lắc</a></li>
           <li><a href="#">HoaHoc10 - Chất béo</a></li>
         </ul>
-      </li>
-      <li class="navigation-item" id="Analysis">
+      </li> -->
+      <!-- <li class="navigation-item" id="Analysis">
         <div class="iocn-link">
           <a>
             <i class="bx bx-pie-chart-alt-2"></i>
             <span class="link_name">Thống kê</span>
-          </a>
+          </a> -->
           <!-- <i class="bx bxs-chevron-down arrow"></i> -->
-        </div>
+        <!-- </div> -->
         <!-- <ul class="sub-menu">
             <li><a class="link_name" href="#">Theo dõi</a></li>
             <li><a href="#">Web Design</a></li>
             <li><a href="#">Login Form</a></li>
             <li><a href="#">Card Design</a></li>
           </ul> -->
-      </li>
+      <!-- </li> -->
       <li class="navigation-item" id="Bookmark">
         <a href="bookmark">
           <i class="bx bxs-bookmarks"></i>

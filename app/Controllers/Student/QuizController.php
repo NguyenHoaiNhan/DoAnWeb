@@ -19,4 +19,48 @@ class QuizController extends BaseController
         
     }
 
-}
+    public function checkResultOfQuestion($QuizID, $QuestionID, $Opt)
+    {
+        $model = new Quiz_model();
+        $QuizResult = $model->checkResult($QuizID);
+
+        $ScoreCount = 0;
+
+        for($i = 0; $i < count($QuizResult); $i++)
+        {
+            if($QuestionID == $QuizResult[$i]['id'])
+            {
+               if($Opt == $QuizResult[$i]['answer'])
+               {
+                    $ScoreCount += 1;
+                    break;
+               }
+            }
+        }
+
+        return $ScoreCount;
+    }
+
+    public function checkResult()
+    {
+        $quizID = $_POST['quizID'];
+        $submittedAnswer = $_POST['answerList'];
+
+        $totalScore = 0;
+        
+        foreach($submittedAnswer as $row)
+        {
+            $totalScore += $this->checkResultOfQuestion($quizID, $row['id'], $row['opt']);
+        }
+
+        return json_encode($totalScore);
+    }
+
+    public function showResult()
+    {
+        $QuestionID = $_GET['id'];
+        $model = new Quiz_model();
+        $data['masterData'] = $model->getResultByQuizID($QuestionID);
+        return view('Student/Quiz/ShowResult', $data);
+    }
+}   

@@ -35,17 +35,30 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Student\HomeController::index');
 $routes->post('/student/scrollPage', 'Student\HomeController::fetch');
 
-$routes->group('student', function($routes){
+$routes->group('student', function ($routes) {
     $routes->get('home', 'Student\HomeController::index');
     $routes->get('discussion', 'Student\DiscussionController::index');
     $routes->get('bookmark', 'Student\BookmarkController::index');
     $routes->get('account', 'Student\AccountController::index');
     $routes->get('startquiz', 'Student\QuizController::startQuiz');
+    $routes->post('submitquiz', 'Student\QuizController::checkResult');
+    $routes->get('result', 'Student\QuizController::showResult');
 });
 
-$routes->group('coach', function($routes){
+$routes->group('coach', function ($routes) {
     $routes->get('home', 'Coach\HomeController::index');
+    $routes->get('bank', 'Coach\QuestionbankController::index');
+    $routes->get('addquestion', 'Coach\AddquestionController::index');
+    $routes->get('personal', 'Coach\PersonalController::index');
+    $routes->get('editquestion', 'Coach\AddquestionController::edit');
+    $routes->get('edit', 'Coach\AddquestionController::editQuestion');
 });
+
+// routes Ngà:
+$routes->post('/coach/add', 'Coach\AddquestionController::addQuestion');
+$routes->post('/question', 'Coach\QuestionbankController::fetch_c');
+$routes->post('/question1', 'Coach\QuestionbankController::fetch_d');
+$routes->post('/tag', 'Coach\QuestionbankController::fetch_t');
 
 /*
  * --------------------------------------------------------------------
