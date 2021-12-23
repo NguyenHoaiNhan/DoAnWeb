@@ -205,3 +205,98 @@ CRITICAL - 2021-12-22 08:56:31 --> Undefined array key "answerList"
 #4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
 #6 {main}
+CRITICAL - 2021-12-22 19:30:01 --> Undefined array key "username"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 17)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-22 19:39:46 --> Undefined variable $leminhtam1977
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Apache24\\htd...', 21)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-22 19:42:42 --> Undefined variable $leminhtam1977
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\Apache24\\htd...', 21)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 19:43:06 --> Unknown column 'leminhtam1977' in 'where clause'
+CRITICAL - 2021-12-22 19:43:06 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('leminhtam1977')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 19:47:05 --> Unknown column 'asd' in 'where clause'
+CRITICAL - 2021-12-22 19:47:05 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('asd')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 19:49:05 --> Unknown column 'minhtam1977' in 'where clause'
+CRITICAL - 2021-12-22 19:49:05 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('minhtam1977')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 20:05:40 --> Unknown column 'asd' in 'where clause'
+CRITICAL - 2021-12-22 20:05:40 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('asd')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 20:06:28 --> Unknown column 'asd' in 'where clause'
+CRITICAL - 2021-12-22 20:06:28 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('asd')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 20:06:51 --> Unknown column 'minhtam1977' in 'where clause'
+CRITICAL - 2021-12-22 20:06:51 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('minhtam1977')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-22 20:07:00 --> Unknown column 'minhtam1977' in 'where clause'
+CRITICAL - 2021-12-22 20:07:00 --> Call to a member function getResult() on bool
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(21): App\Models\User_model->getUserLoginInfo('minhtam1977')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-22 21:39:32 --> Undefined array key "user"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\AuthenController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 17)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\AuthenController->login()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthenController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}

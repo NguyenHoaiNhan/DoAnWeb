@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="<?= base_url() . "/app/css/Student/" . $PageCSS . ".css" ?>" />
   <!-- Boxiocns CDN Link -->
   <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -128,9 +129,9 @@
           </div>
           <div class="name-job">
             <div class="profile_name">Nguyễn Tấn Ngà</div>
-            <div class="job">Học sinh lớp 10</div>
+            <div class="job"></div>
           </div>
-          <i class="bx bx-log-out"></i>
+          <i class="bx bx-log-out" onclick="logout()"></i>
         </div>
       </li>
     </ul>
@@ -154,6 +155,17 @@
     sidebarBtn.addEventListener("click", () => {
       sidebar.classList.toggle("close");
     });
+
+    function logout(){
+            localStorage.removeItem('name');
+            localStorage.removeItem('currentUID');
+            localStorage.removeItem('isCoach');
+            location.href = '/';
+        }
+
+    $(document).ready(function(){
+            $('.profile_name').text(localStorage.getItem('name'));
+        })
   </script>
 </body>
 

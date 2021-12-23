@@ -7,7 +7,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right top, #D91B23, #124FEB);
+    background: linear-gradient(to right top, tomato, blue);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -94,6 +94,7 @@
     border: 0;
     outline: none;
     border-radius: 30px;
+    text-align: center;
 }
 
 .check-box{

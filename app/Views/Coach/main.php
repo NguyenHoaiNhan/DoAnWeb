@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/public/Bootstrap/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.css" integrity="sha384-WsHMgfkABRyG494OmuiNmkAOk8nhO1qE+Y6wns6v+EoNoTNxrWxYpl5ZYWFOLPCM" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.js" integrity="sha384-lhN3C1JSmmvbT89RGOy6nC8qFBS8X/PLsBWIqiNdD4WGNsYOWpS2Il0x4TBrK8E2" crossorigin="anonymous"></script>
 </head>
 
@@ -34,7 +35,7 @@
                 <div class="iocn-link">
                     <a href="bank">
                         <i class="bx bxs-buildings"></i>
-                        <span class="link_name">Ngân hàng câu hỏi</span>
+                        <span class="link_name">Câu hỏi</span>
                     </a>
                     <!-- <i class="bx bxs-chevron-down arrow"></i> -->
                 </div>
@@ -94,9 +95,9 @@
                     </div>
                     <div class="name-job">
                         <div class="profile_name">Ngô Bảo Châu</div>
-                        <div class="job">Giáo sư toán</div>
+                        <div class="job"></div>
                     </div>
-                    <i class="bx bx-log-out"></i>
+                    <i class="bx bx-log-out" onclick="logout()"></i>
                 </div>
             </li>
         </ul>
@@ -118,6 +119,17 @@
         sidebarBtn.addEventListener("click", () => {
             sidebar.classList.toggle("close");
         });
+
+        function logout(){
+            localStorage.removeItem('name');
+            localStorage.removeItem('currentUID');
+            localStorage.removeItem('isCoach');
+            location.href = '/';
+        }
+
+        $(document).ready(function(){
+            $('.profile_name').text(localStorage.getItem('name'));
+        })
     </script>
 </body>
 

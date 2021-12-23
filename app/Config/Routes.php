@@ -34,7 +34,10 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 // $routes->get('/', 'Student\HomeController::index');
 
-// routes Hoai Nhna
+// routes Hoai Nhan
+
+$routes->post('login', 'AuthenController::login');
+$routes->get('/', 'AuthenController::index');
 $routes->post('/student/scrollPage', 'Student\HomeController::fetch');
 $routes->group('student', function ($routes) {
     $routes->get('home', 'Student\HomeController::index');
@@ -59,7 +62,8 @@ $routes->post('/question1', 'Coach\QuestionbankController::fetch_d');
 $routes->post('/tag', 'Coach\QuestionbankController::fetch_t');
 
 $routes->group('coach', function ($routes) {
-    $routes->get('home', 'Coach\HomeController::index');
+    // $routes->get('home', 'Coach\HomeController::index');
+    $routes->get('home', 'Coach\QuestionbankController::index');
     $routes->get('bank', 'Coach\QuestionbankController::index');
     $routes->get('quizgenerator', 'Coach\QuizgeneratorController::index');
     $routes->get('prequiz', 'Coach\QuizgeneratorController::preQuiz');
