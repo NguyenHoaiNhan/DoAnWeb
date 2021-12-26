@@ -29,18 +29,18 @@
           <option value="sinhoc10">Sinh học 12</option>
           <option value="anhvan10">Anh văn 12</option>
           <option value="gdcd">Giáo dục công dân 12</option>
-          <option value="dialy">Địa lý 12</option>
-          <option value="lichsu">Lịch sử 12</option>
+          <option value="dialy12">Địa lý 12</option>
+          <option value="lichsu12">Lịch sử 12</option>
         </optgroup>
         <optgroup label="Ôn thi THPT">
-          <option value="toan10">Toán</option>
-          <option value="vatly10">Vật lý</option>
-          <option value="hoahoc10">Hóa học</option>
-          <option value="sinhoc10">Sinh học</option>
-          <option value="anhvan10">Anh văn</option>
-          <option value="gdcd">Giáo dục công dân</option>
-          <option value="dialy">Địa lý</option>
-          <option value="lichsu">Lịch sử</option>
+          <option value="toanthpt">Toán</option>
+          <option value="vatlythpt">Vật lý</option>
+          <option value="hoahocthpt">Hóa học</option>
+          <option value="sinhocthpt">Sinh học</option>
+          <option value="anhvanthpt">Anh văn</option>
+          <option value="gdcdthpt">Giáo dục công dân</option>
+          <option value="dialythpt">Địa lý</option>
+          <option value="lichsuthpt">Lịch sử</option>
         </optgroup>
       </select>
     </div>
@@ -72,6 +72,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/app/js/Coach/paging.js"></script>
 <script>
+  $('.filter-content').on('change', function() {
+    var filter = $('#selected_filter_item').val();
+    $.ajax({
+      url: "/coach/filter",
+      method: "POST",
+      dataType: "json",
+      data: {
+        filter: filter
+      },
+      success: function(data) {
+        console.log('có đc filter');
+      }
+    })
+  });
+
   var storeID = [];
 
   function test(id) {
@@ -97,12 +112,6 @@
   function test2(id) {
     storeID.push(id);
   }
-
-
-
-
-
-
 
   $('#btn-preview').click(function() {
     /* console.log('Call ajax');

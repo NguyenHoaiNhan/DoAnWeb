@@ -44,7 +44,7 @@ $routes->group('student', function ($routes) {
     $routes->get('home', 'Student\HomeController::index');
     $routes->get('discussion', 'Student\DiscussionController::index');
     $routes->get('bookmark', 'Student\BookmarkController::index');
-    $routes->get('account', 'Student\AccountController::index');
+    // $routes->get('account', 'Student\AccountController::index');
     $routes->get('startquiz', 'Student\QuizController::startQuiz');
     $routes->post('submitquiz', 'Student\QuizController::checkResult');
     $routes->get('result', 'Student\QuizController::showResult');
@@ -61,10 +61,13 @@ $routes->post('/coach/addquiz', 'Coach\QuizgeneratorController::add_quiz');
 
 $routes->post('/question', 'Coach\QuestionbankController::fetch_c');
 $routes->post('/previewquiz', 'Coach\AddquestionController::previewQuiz');
+$routes->post('/coach/add__quiz', 'Coach\QuizgeneratorController::add__quiz');
 $routes->post('/coach/update', 'Coach\AddquestionController::updateQuestion');
+$routes->post('/coach/updatequiz', 'Coach\AddquestionController::updateQuiz');
 $routes->post('/search', 'Coach\QuestionbankController::fetch_s');
 $routes->post('/question1', 'Coach\QuestionbankController::fetch_d');
 $routes->post('/tag', 'Coach\QuestionbankController::fetch_t');
+$routes->post('/coach/filter', 'Coach\QuestionbankController::fetch_filter');
 
 $routes->group('coach', function ($routes) {
     // $routes->get('home', 'Coach\HomeController::index');
@@ -74,10 +77,15 @@ $routes->group('coach', function ($routes) {
     $routes->get('prequiz', 'Coach\QuizgeneratorController::preQuiz');
     $routes->get('addquestion', 'Coach\AddquestionController::index');
     $routes->get('addquiz', 'Coach\QuizgeneratorController::addquiz');
+    $routes->get('editquiz', 'Coach\QuizgeneratorController::editquiz');
+    $routes->get('editQuiz', 'Coach\AddquestionController::editQuiz');
     $routes->get('personal', 'Coach\PersonalController::index');
     $routes->get('editquestion', 'Coach\AddquestionController::edit');
     $routes->get('edit', 'Coach\AddquestionController::editQuestion');
     $routes->get('delete', 'Coach\AddquestionController::deleteQuestion');
+    $routes->get('delete', 'Coach\AddquestionController::deleteQuestion');
+    $routes->get('deleteQuiz', 'Coach\AddquestionController::deleteQuiz');
+    // $routes->post('question', 'Coach\QuestionbankController::fetch_c');
 });
 /*
  * --------------------------------------------------------------------

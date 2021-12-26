@@ -19,7 +19,7 @@ function loadBookmarkedQuiz() {
                 //     action = 'active';
             } else {
                 data.forEach(function (obj) {
-                    prepareQuizItem(obj.id, obj.description, obj.title, obj.total, obj.time);
+                    prepareQuizItem(obj.id, obj.description, obj.title, obj.total, obj.time, obj.participant);
                     // action = 'inactive';
                 });
             }
@@ -29,7 +29,7 @@ function loadBookmarkedQuiz() {
 }
 
 
-function prepareQuizItem(quizID, topic, title, quesNum, duration) {
+function prepareQuizItem(quizID, topic, title, quesNum, duration, joiner) {
     var data = `
                             <li>
                             <div class="bookmark-item-name">
@@ -58,7 +58,7 @@ function prepareQuizItem(quizID, topic, title, quesNum, duration) {
                                 <h2>`+ duration + ` phút</h2>
                                 </div>
                             </div>
-                            <div class="info-col">
+                            <div class="info-col" style="display: none">
                                 <div class="col-name">
                                 <p>ĐIỂM CAO NHẤT</p>
                                 </div>
@@ -71,7 +71,7 @@ function prepareQuizItem(quizID, topic, title, quesNum, duration) {
                                 <p>THAM GIA</p>
                                 </div>
                                 <div class="col-val">
-                                <h2>112 bạn</h2>
+                                <h2>`+ joiner +` bạn</h2>
                                 </div>
                             </div>
                             <div class="bookmark-item-action">

@@ -27,6 +27,12 @@ class QuizgeneratorController extends BaseController
         $PageInfo = $this->loadMasterLayout('Thêm bài trắc nghiệm', 'add-question', 'add_quiz', 1);
         return view('Coach/main', $PageInfo);
     }
+
+    public function editquiz()
+    {
+        return View('Coach/Pages/edit_quiz');
+    }
+
     public function add_quiz()
     {
         if (isset($_POST['title'])) {
@@ -51,11 +57,41 @@ class QuizgeneratorController extends BaseController
         if (isset($_POST['limit'])) {
             $limit = $_POST['limit'];
             $start = $_POST['start'];
+            $userID = $_POST['userID'];
 
             $model = new Quiz_model();
-            $data = $model->fetch_data($limit, $start);
+            $data = $model->fetch_dataByUser($limit, $start, $userID);
 
             echo json_encode($data);
         }
+    }
+
+    public function add__quiz()
+    {
+        if (isset($_POST['title'])) {
+            $title = $_POST['title'];
+            $descriprion = $_POST['description'];
+            $filter = $_POST['filter'];
+            $time = $_POST['time'];
+            $total = $_POST['total'];
+            $createDate = $_POST['createDate'];
+            $qid = $_POST['arr'];
+        }
+
+
+
+        $model = new Quiz_model();
+        $model->add_quiz($title, $descriprion, $filter, $time, $total, $createDate);
+        $mcid = $model->findQ($title, $descriprion);
+        $saveid = 0;
+        foreach ($mcid as $row) {
+            $saveid = $row['id'];
+        }
+        for ($i = 0; $i < count($qid); $i++) {
+            $model->insert_belong($qid[$i], $saveid);
+        }
+
+        $a = 0;
+        return json_encode($a);
     }
 }

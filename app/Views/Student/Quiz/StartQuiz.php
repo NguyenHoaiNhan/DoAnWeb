@@ -21,6 +21,7 @@
                 echo "<p id='ques-optb'>".$ques['OptB']."</p>";
                 echo "<p id='ques-optc'>".$ques['OptC']."</p>";
                 echo "<p id='ques-optd'>".$ques['OptD']."</p>";
+                echo "<p id='quiz-time'>".$ques['Time']."</p>";
                 echo "</div>";
             } 
        ?>
@@ -123,7 +124,7 @@
             <p>:</p>
             <h3 id="minute" class="coundown-time">00</h3>
             <p>:</p>
-            <h3 id="second" class="coundown-time">07</h3>
+            <h3 id="second" class="coundown-time">00</h3>
         </div>
         <div class="quiz-action">
             <button id="btn_submit">Nộp bài</button>

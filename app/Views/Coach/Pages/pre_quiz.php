@@ -26,21 +26,66 @@
             <div class="loading">
             </div>
             <div class="preview-quiz row">
-                <div class="col-sm-12 text-right" style="display:flex;justify-content:space-between">
+                <div style="display:flex;justify-content: space-around">
                     <div class="title">
-                        <label for="title" style="">Nhập title</label>
+                        <label for="title">Nhập title</label>
                         <input type="text" id="title" placeholder="Nhập title">
                     </div>
                     <div class="description">
-                        <label for="title">Nhập description</label>
+                        <label for="description">Nhập description</label>
                         <input type="text" id="description" placeholder="Nhập description">
+                    </div>
+                    <div class="filter1">
+                        <label for="filter1">Nhập filter</label>
+                        <select class="filter-content" id="selected_filter_item" name="filters">
+                            <optgroup label="Lớp 10">
+                                <option value="toan10">Toán 10</option>
+                                <option value="vatly10">Vật lý 10</option>
+                                <option value="hoahoc10">Hóa học 10</option>
+                                <option value="sinhoc10">Sinh học 10</option>
+                                <option value="anhvan10">Anh văn 10</option>
+                                <option value="gdcd">Giáo dục công dân 10</option>
+                                <option value="dialy">Địa lý 10</option>
+                                <option value="lichsu">Lịch sử 10</option>
+                            </optgroup>
+                            <optgroup label="Lớp 11">
+                                <option value="toan10">Toán 11</option>
+                                <option value="vatly10">Vật lý 11</option>
+                                <option value="hoahoc10">Hóa học 11</option>
+                                <option value="sinhoc10">Sinh học 11</option>
+                                <option value="anhvan10">Anh văn 11</option>
+                                <option value="gdcd">Giáo dục công dân 11</option>
+                                <option value="dialy">Địa lý 11</option>
+                                <option value="lichsu">Lịch sử 11</option>
+                            </optgroup>
+                            <optgroup label="Lớp 12">
+                                <option value="toan10">Toán 12</option>
+                                <option value="vatly10">Vật lý 12</option>
+                                <option value="hoahoc10">Hóa học 12</option>
+                                <option value="sinhoc10">Sinh học 12</option>
+                                <option value="anhvan10">Anh văn 12</option>
+                                <option value="gdcd">Giáo dục công dân 12</option>
+                                <option value="dialy12">Địa lý 12</option>
+                                <option value="lichsu12">Lịch sử 12</option>
+                            </optgroup>
+                            <optgroup label="Ôn thi THPT">
+                                <option value="toanthpt">Toán</option>
+                                <option value="vatlythpt">Vật lý</option>
+                                <option value="hoahocthpt">Hóa học</option>
+                                <option value="sinhocthpt">Sinh học</option>
+                                <option value="anhvanthpt">Anh văn</option>
+                                <option value="gdcdthpt">Giáo dục công dân</option>
+                                <option value="dialythpt">Địa lý</option>
+                                <option value="lichsuthpt">Lịch sử</option>
+                            </optgroup>
+                        </select>
                     </div>
                     <div class="time">
                         <label for="time">Nhập thời gian</label>
                         <input type="number" id="time" placeholder="Nhập thời gian">
                     </div>
                 </div>
-                <button style="margin-top:20px; margin-bottom: 20px;margin-left: 45%" id="btn_add" class="btn btn-success"><a style="text-decoration:none;color: red;">Xác nhận</a></button>
+                <div style="margin-top:20px; margin-bottom: 20px;margin-left: 45%" id="btn_add" class="btn btn-success"><a style="text-decoration:none;color: red;">Xác nhận</a></div>
             </div>
 
             <!-- Lên đầu trang -->
@@ -71,9 +116,35 @@
 
         $('#btn_add').click(function() {
             var title = $('#title').val();
-            var description = $('description').val();
-            var time = $('time').val();
+            var description = $('#description').val();
+            var filter = $('#selected_filter_item').val();
+            var time = $('#time').val();
             var total = arr.length;
+            var start = new Date();
+            var a = start.getDate();
+            var b = start.getMonth();
+            var c = start.getFullYear();
+            var createDate = c + '-' + (b + 1) + '-' + a;
+            var userID = localStorage.getItem('currentID');
+
+            $.ajax({
+                url: "/coach/add__quiz",
+                method: "POST",
+                dataType: 'json',
+                data: {
+                    title: title,
+                    description: description,
+                    filter: filter,
+                    time: time,
+                    total: total,
+                    createDate: createDate,
+                    arr: arr
+                },
+                success: function(data) {
+                    window.alert('Thêm thành công');
+                    window.location = 'quizgenerator';
+                }
+            })
         })
     </script>
 </body>

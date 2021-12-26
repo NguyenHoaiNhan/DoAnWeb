@@ -81,7 +81,7 @@ $(document).ready(function () {
                                     <span>Thời lượng</span><br />
                                     <span>` + duration + ` phút</span>
                                     </p>
-                                    <p>
+                                    <p style="display: none">
                                     <span>Cao nhất</span><br />
                                     <span>` + topScore + `</span>
                                     </p>

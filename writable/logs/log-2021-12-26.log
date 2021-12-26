@@ -286,3 +286,223 @@ CRITICAL - 2021-12-26 09:22:48 --> Undefined array key "answerList"
 #4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
 #6 {main}
+CRITICAL - 2021-12-26 10:54:20 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 10:54:33 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 10:58:18 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 10:59:37 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:00:33 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:03:21 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:03:33 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:05:09 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:50:44 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:56:14 --> Undefined array key "arr"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\AddquestionController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 129)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\AddquestionController->previewQuiz()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\AddquestionController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:56:17 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:56:22 --> Undefined array key "arr"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\AddquestionController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 129)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\AddquestionController->previewQuiz()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\AddquestionController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 11:59:29 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:18:39 --> Too few arguments to function App\Models\Quiz_model::addQuestion(), 7 passed in C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\AddquestionController.php on line 52 and exactly 8 expected
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\AddquestionController.php(52): App\Models\Quiz_model->addQuestion('\\\\text{n\xE1\xBB\x99i du...', '\\\\frac{2}{3}', '\\\\frac{2}{3}', '\\\\frac{2}{3}', '\\\\frac{2}{3}', 'C', '1')
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\AddquestionController->addQuestion()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\AddquestionController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:19:36 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:22:29 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:23:24 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:24:48 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:25:10 --> Undefined array key "filter"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 51)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_filter()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 12:46:11 --> Undefined array key "arr"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\AddquestionController.php(129): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 129)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\AddquestionController->previewQuiz()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\AddquestionController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:08:55 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 31)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_c()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:13:31 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 31)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_c()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:16:46 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuestionbankController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 31)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuestionbankController->fetch_c()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuestionbankController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:30:31 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuizgeneratorController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 60)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuizgeneratorController->fetch()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuizgeneratorController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:32:10 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuizgeneratorController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 60)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuizgeneratorController->fetch()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuizgeneratorController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:32:14 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuizgeneratorController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 60)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuizgeneratorController->fetch()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuizgeneratorController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+CRITICAL - 2021-12-26 16:35:36 --> Undefined array key "userID"
+#0 C:\Apache24\htdocs\QuickQuiz\app\Controllers\Coach\QuizgeneratorController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\Apache24\\htd...', 60)
+#1 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(824): App\Controllers\Coach\QuizgeneratorController->fetch()
+#2 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coach\QuizgeneratorController))
+#3 C:\Apache24\htdocs\QuickQuiz\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Apache24\htdocs\QuickQuiz\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\Apache24\htdocs\QuickQuiz\system\Commands\Server\rewrite.php(43): require_once('C:\\Apache24\\htd...')
+#6 {main}
+ERROR - 2021-12-26 17:24:22 --> Cannot add or update a child row: a foreign key constraint fails (`doan`.`question`, CONSTRAINT `FK_question_uid` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+ERROR - 2021-12-26 17:25:17 --> Cannot delete or update a parent row: a foreign key constraint fails (`doan`.`belong`, CONSTRAINT `FK_belong_qid` FOREIGN KEY (`qid`) REFERENCES `question` (`id`))
+ERROR - 2021-12-26 17:25:50 --> Cannot delete or update a parent row: a foreign key constraint fails (`doan`.`belong`, CONSTRAINT `FK_belong_qid` FOREIGN KEY (`qid`) REFERENCES `question` (`id`))
+ERROR - 2021-12-26 17:36:31 --> Cannot add or update a child row: a foreign key constraint fails (`doan`.`question`, CONSTRAINT `FK_question_uid` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)

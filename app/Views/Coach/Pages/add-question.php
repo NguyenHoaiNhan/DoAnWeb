@@ -25,12 +25,12 @@
     <div class="success"></div>
     <div class="container">
         <form>
-            <div class="form-group row" style="margin-top: 20px;">
+            <!-- <div class="form-group row" style="margin-top: 20px;">
                 <label for="filter" class="col-4 col-form-label">Filter</label>
                 <div class="col-8">
                     <input id="filter" name="filter" placeholder="Nhập filter" type="text" class="form-control">
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="form-group row" style="margin-top: 20px;">
                 <label for="tag" class="col-4 col-form-label">Tag</label>
                 <div class="col-8">
@@ -45,9 +45,10 @@
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="question" class="col-4 col-form-label"></label>
-                <div class="col-8 preview-question" style="background-color: white;height: 86px;width: 855px;margin-left: 12px;">
+                <div class="col-8 preview-question" style="background-color: white;height: 86px;width: 740px;margin-left: 12px;">
                 </div>
             </div>
+           
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="A" class="col-4 col-form-label">A</label>
                 <div class="col-8">
@@ -56,7 +57,7 @@
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="A" class="col-4 col-form-label"></label>
-                <div class="col-8 preview-a-option" style="background-color: white;height: 86px;width: 855px;margin-left: 12px;">
+                <div class="col-8 preview-a-option" style="background-color: white;height: 86px;width: 740px;margin-left: 12px;">
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -67,7 +68,7 @@
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="a-option" class="col-4 col-form-label"></label>
-                <div class="col-8 preview-b-option" style="background-color: white;height: 86px;width: 855px;margin-left: 12px;">
+                <div class="col-8 preview-b-option" style="background-color: white;height: 86px;width: 740px;margin-left: 12px;">
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -78,7 +79,7 @@
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="a-option" class="col-4 col-form-label"></label>
-                <div class="col-8 preview-c-option" style="background-color: white;height: 86px;width: 855px;margin-left: 12px;">
+                <div class="col-8 preview-c-option" style="background-color: white;height: 86px;width: 740px;margin-left: 12px;">
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
@@ -89,45 +90,67 @@
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="a-option" class="col-4 col-form-label"></label>
-                <div class="col-8 preview-d-option" style="background-color: white;height: 86px;width: 855px;margin-left: 12px;">
+                <div class="col-8 preview-d-option" style="background-color: white;height: 86px;width: 740px;margin-left: 12px;">
                 </div>
             </div>
             <div class="form-group row" style="margin-top: 20px;">
                 <label for="answer" class="col-4 col-form-label">Đáp án</label>
                 <div class="col-8">
-                    <input id="answer" name="answer" placeholder="Nhập đáp án" type="text" class="form-control">
+                   <!--  <input id="answer" name="answer" placeholder="Nhập đáp án" type="text" class="form-control"> -->
+                   <select name="answer" id="answer" class="form-control">
+                       <option value="A">A</option>
+                       <option value="B">B</option>
+                       <option value="C">C</option>
+                       <option value="D">D</option>
+                   </select>
                 </div>
             </div>
-            <div class="form-group row" style="margin-top: 20px;">
+            <div class="form-group row" style="margin-top: 20px; display: none;">
                 <label for="uid" class="col-4 col-form-label">User id</label>
                 <div class="col-8">
                     <input id="uid" name="uid" placeholder="Nhập user id" type="text" class="form-control">
                 </div>
             </div>
+            <div style="display: flex; gap: 30px; width: 100%; justify-content: center">
             <div class="form-group row" style="margin-top: 20px;margin-bottom: 20px;">
                 <div class="offset-4 col-8">
                     <div id="confirm" class="btn btn-primary">Confirm</div>
                 </div>
             </div>
+
+            <div class="form-group row" style="margin-top: 20px;margin-bottom: 20px;">
+                <div class="offset-4 col-8">
+                    <div id="cancel-button" class="btn btn-primary" style="background-color: tomato; border: 0;">Thoát</div>
+                </div>
+            </div>
+            </div>
         </form>
     </div>
 </body>
 <script>
+    $('#cancel-button').click(function(){
+        console.log('thoát');
+        location.href = 'bank';
+    })
+
     $('#confirm').click(function() {
         var question = $('#question').val().replace(/\\/g, "\\\\");
-        var filter = $('#filter').val().replace(/\\/g, "\\\\");
         var opta = $('#a-option').val().replace(/\\/g, "\\\\");
         var optb = $('#b-option').val().replace(/\\/g, "\\\\");
         var optc = $('#c-option').val().replace(/\\/g, "\\\\");
         var optd = $('#d-option').val().replace(/\\/g, "\\\\");
         var answer = $('#answer').val().replace(/\\/g, "\\\\");
-        var uid = $('#uid').val();
-        $.ajax({
+        var uid = localStorage.getItem('currentUID');
+
+        if(question == '' || opta == '' || optb == '' || answer == ''){
+            alert('Bạn không thể thêm câu hỏi nếu trống các trường');
+        }
+        else{
+            $.ajax({
             url: "/coach/add",
             method: "POST",
             data: {
                 question: question,
-                filter: filter,
                 opta: opta,
                 optb: optb,
                 optc: optc,
@@ -140,6 +163,7 @@
                 window.location = 'bank';
             }
         })
+        }
     })
 </script>
 

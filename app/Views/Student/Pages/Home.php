@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="hs__content">
-      <div class="subject-container">
+      <div class="subject-container" style="display: none;">
         <center>
           <h1 class="subject-title">Các bài<span>Phổ biến</span></h1>
         </center>
@@ -106,7 +106,7 @@
         </div>
       </div>
 
-      <h3 class="grid-subject-title">CÁC NỘI DUNG ĐANG CÓ</h3>
+      <h3 class="grid-subject-title">CÁC BÀI TRẮC NGHIỆM ĐANG CÓ</h3>
 
       <div id="all-quiz" class="data-item-wrapper">
         <div id="list-all-quiz" class="grid-subjects">

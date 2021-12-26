@@ -19,19 +19,23 @@
                 <img src="fb.png">
                 <img src="google.png">
             </div> -->
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                <h1>QuickQuiz</h1>
+            </div>
             <form id="login" class="input-group">
                 <input id="loginname" type="text" class="input-field" placeholder="User ID" require>
                 <input id="loginpass" type="password" class="input-field" placeholder="Password" require>
                 <!-- <input type="checkbox" class="check-box"><span>Hiện mật khẩu</span> -->
-                <div id="btn_login" class="submit-btn"><b>Log in</b></div>
+                <div style="height: 30px"></div>
+                <div id="btn_login" class="submit-btn"><b>LOG IN</b></div>
             </form>
             <form id="register" class="input-group">
                 <input id="regname" type="text" class="input-field" placeholder="User ID" require>
-                <input id="regpass1" type="email" class="input-field" placeholder="Password" require>
-                <input id="regpass2" type="text" class="input-field" placeholder="Confirm password" require>
+                <input id="regpass1" type="password" class="input-field" placeholder="Password" require>
+                <input id="regpass2" type="password" class="input-field" placeholder="Confirm password" require>
                 <input id="fullname" type="text" class="input-field" placeholder="Full name" require>
                 <input id="isCoach" type="checkbox" class="check-box"><span>Là giáo viên</span>
-                <div id="btn_register" class="submit-btn"><b>Register</b></div>
+                <div id="btn_register" class="submit-btn"><b>REGISTER</b></div>
             </form>
         </div>
     </div>
@@ -106,7 +110,14 @@
                 var fullname = getFullName();
                 var iscoach = isCoach();
 
-                $.ajax({
+                console.log(pass1 + " " + pass2);
+
+                let pattern = /^\d{8,12}$/;
+                let check = pattern.test(pass1);
+
+                if (check == true && pass1 == pass2) {
+                    console.log("Valid");
+                    $.ajax({
                     type: "POST",
                     url: "signup",
                     dataType: 'json',
@@ -125,6 +136,11 @@
                         console.log(thrownError);
                     }
                 });
+                   
+                } else {
+                    console.log("Invalid " + pass1 + ' ' + pass2);
+                    alert('Kiểm tra lại mật khẩu bạn nhập!');
+                }
             })
 
 

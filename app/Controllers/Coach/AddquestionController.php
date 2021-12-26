@@ -24,24 +24,8 @@ class AddquestionController extends BaseController
 
     public function addQuestion()
     {
-        // $question = new QuestionModel();
-        // $data = [
-        //     'question' => $this->request->getPost('question'),
-        //     'filter' => $this->request->getPost('filter'),
-        //     'A' => $this->request->getPost('A'),
-        //     'B' => $this->request->getPost('B'),
-        //     'C' => $this->request->getPost('C'),
-        //     'D' => $this->request->getPost('D'),
-        //     'answer' => $this->request->getPost('answer'),
-        //     'uid' => $this->request->getPost('uid')
-        // ];
-        // $question->save($data);
-        /* redirect('coach/bank')->with('status', 'Inserted Successfully'); */
-
-        // hoai nhan
         if (isset($_POST['question'])) {
             $question = $_POST['question'];
-            $filter = $_POST['filter'];
             $opta = $_POST['opta'];
             $optb = $_POST['optb'];
             $optc = $_POST['optc'];
@@ -50,7 +34,7 @@ class AddquestionController extends BaseController
             $uid = $_POST['uid'];
         }
         $model = new Quiz_model();
-        $model->addQuestion($question, $filter, $opta, $optb, $optc, $optd, $answer, $uid);
+        $model->addQuestion($question, $opta, $optb, $optc, $optd, $answer, $uid);
     }
 
     public function updateQuestion()
@@ -68,6 +52,18 @@ class AddquestionController extends BaseController
         $model = new Quiz_model();
         $model->edit_question($id, $question, $filter, $opta, $optb, $optc, $optd, $answer);
     }
+    public function updateQuiz()
+    {
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $filter = $_POST['filter'];
+            $time = $_POST['time'];
+        }
+        $model = new Quiz_model();
+        $model->edit_quiz($id, $title, $description, $filter, $time);
+    }
 
     public function deleteQuestion()
     {
@@ -78,6 +74,18 @@ class AddquestionController extends BaseController
         $model = new Quiz_model();
         $model->delete_question($id);
         $PageInfo = $this->loadMasterLayout('Ngân hàng câu hỏi', 'question_bank', 'question_bank', 1);
+        return view('Coach/main', $PageInfo);
+    }
+
+    public function deleteQuiz()
+    {
+
+        $id = $_GET['id'];
+
+
+        $model = new Quiz_model();
+        $model->delete_quiz($id);
+        $PageInfo = $this->loadMasterLayout('Quản lý bài trắc nghiệm', 'quiz_generator', 'quiz_generator', 1);
         return view('Coach/main', $PageInfo);
     }
 
@@ -104,7 +112,7 @@ class AddquestionController extends BaseController
 
         $model = new Quiz_model();
 
-        $QuestionID = $_POST['arr'];
+        $QuestionID = $_POST['arr1'];
 
         $data = $model->fetch_quiz($this->handle($QuestionID));
 
@@ -134,5 +142,20 @@ class AddquestionController extends BaseController
         }
 
         return $string;
+    }
+
+    public function editQuiz()
+    {
+
+        // hoai nhan
+        $model = new QuestionModel();
+
+
+        $QuizID = $_GET['qid'];
+        $data = $model->getQuizByID($QuizID);
+
+        foreach ($data as $row) {
+            return view('Coach/Pages/edit_quiz', $row);
+        }
     }
 }

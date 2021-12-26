@@ -1,5 +1,5 @@
   <section class="home-section">
-    <div class="hs__header">
+    <div class="hs__header" style="display: none;">
       <div class="searchbox">
         <form>
           <input id="tf_search" type="text" name="" placeholder="Nhập nội dung của bạn...">
@@ -380,7 +380,7 @@
                 <h2>30 phút</h2>
               </div>
             </div>
-            <div class="info-col">
+            <div class="info-col" style="display:none">
               <div class="col-name">
                 <p>ĐIỂM CAO NHẤT</p>
               </div>

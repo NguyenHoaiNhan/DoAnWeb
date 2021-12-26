@@ -350,7 +350,7 @@ body{
   background-color: tomato;
   display: flex;
   flex-direction: row;
-  margin-right: 2px;
+  margin-right: 40px;
   overflow: hidden;
 }
 
@@ -399,14 +399,14 @@ body{
   background-color: azure;
   display: flex;
   flex-direction: row;
-  gap: 2px;
+  gap: 30px;
 }
 
 .info-col{
   height: 100%;
   display: flex;
   flex-direction: column;
-  width: 22%;
+  width: 27%;
   overflow: hidden;
 }
 

@@ -60,4 +60,5 @@ class AuthenController extends BaseController
         $result = 1;
         return json_encode($result);
     }
+
 }

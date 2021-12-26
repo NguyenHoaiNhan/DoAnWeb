@@ -4,6 +4,7 @@ namespace App\Controllers\Coach;
 
 use App\Controllers\BaseController;
 use App\Models\Quiz_model;
+use App\Models\QModel;
 
 class QuestionbankController extends BaseController
 {
@@ -20,14 +21,17 @@ class QuestionbankController extends BaseController
         return view('Coach/main', $PageInfo);
     }
 
+
+    // dùng để lấy câu hỏi của giáo viên đã tạo
     public function fetch_c()
     {
         if (isset($_POST['limit'])) {
             $limit = $_POST['limit'];
             $start = $_POST['start'];
+            $userID = $_POST['userID'];
 
             $model = new Quiz_model();
-            $data = $model->fetch_question($limit, $start);
+            $data = $model->fetch_question($limit, $start, $userID);
 
             echo json_encode($data);
         }
@@ -44,6 +48,16 @@ class QuestionbankController extends BaseController
             echo json_encode($data);
         }
     }
+
+    public function fetch_filter()
+    {
+        $filter = $_POST['filter'];
+        $model = new QModel();
+        $data = $model->where('filter', $filter)->findall();
+
+        echo json_encode($data);
+    }
+
     public function fetch_d()
     {
         $model = new Quiz_model();

@@ -52,10 +52,14 @@ class QuizController extends BaseController
 
         $totalScore = ($totalScore / $quesNum) * 10;
 
-        $isDone = 0;
-
-        // kiểm tra để cập nhật điểm vào trong interaction -> nếu đã có điểm rồi thì k cập nhật lại
         $model = new Quiz_model();
+
+        // cộng vào cho số lượng joiner của bài thi này
+        $model->increaseJoinerForQuiz($quizID);
+
+        $isDone = 0;
+        // kiểm tra để cập nhật điểm vào trong interaction -> nếu đã có điểm rồi thì k cập nhật lại
+       
         $isExists = $model->isExistsInInteraction($quizID, $userID);
 
         // nếu thông tin của user, quiz này chưa từng tồn tại trong interaction thì dùng insert

@@ -26,27 +26,28 @@ $(document).ready(function () {
 
     // SUPPORT FUNCTIONS 
     function lazzyLoader() {
-        var output = '';
-        output += "<p>loading...</p>";
-        $(".loading-items-space").html(output);
+        // var output = '';
+        // output += "<p>loading...</p>";
+        // $(".loading-items-space").html(output);
     }
 
     function load_data(limit, start) {
+        var userID = localStorage.getItem('currentUID');
         $.ajax({
             url: "/coach/scrollPage",
             method: "POST",
             dataType: 'json',
-            data: { limit: limit, start: start },
+            data: { limit: limit, start: start, userID: userID},
             success: function (data) {
                 console.log(data);
                 var DataLength = Object.keys(data).length;
                 testDB = data;
                 if (DataLength == 0) {
-                    $('.loading-items-space').html('<h4 style="font-size: 14px; text-align: center;font-weight: 800;">Xin lỗi nhưng không còn bài trắc nghiệm nào khác!</h4>');
+                    // $('.loading-items-space').html('<h4 style="font-size: 14px; text-align: center;font-weight: 800;">Xin lỗi nhưng không còn bài trắc nghiệm nào khác!</h4>');
                     action = 'active';
                 } else {
                     data.forEach(function (obj) {
-                        prepareItemData(obj.description, obj.title, obj.total, obj.time, obj.participant);
+                        prepareItemData(obj.id, obj.description, obj.title, obj.total, obj.time, obj.participant);
                         action = 'inactive';
                     });
                 }
@@ -54,7 +55,7 @@ $(document).ready(function () {
         })
     };
 
-    function prepareItemData(topic, title, questionNum, duration, participant) {
+    function prepareItemData(id, topic, title, questionNum, duration, participant) {
 
         var item = `
                                 <div class="grid-item">
@@ -68,8 +69,8 @@ $(document).ready(function () {
                                     <p>Số câu hỏi: <b>` + questionNum + ` câu</b></p>
                                 </div>
                                 <div class="quiz-action">
-                                    <button id="btn_bookmark" onclick="">Sửa</button>
-                                    <button id="btn_join_list">Xóa</button>
+                                    <button id="` + id + `" onclick="test(this.id)">Sửa</button>
+                                    
                                 </div>
                                 <div class="quiz-descr">
                                     <p>

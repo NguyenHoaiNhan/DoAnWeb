@@ -1,5 +1,5 @@
 <section class="home-section">
-  <div class="hs__header">
+  <div class="hs__header" style="display: none;">
     <div class="filter">
       <select class="filter-content" id="selected_filter_item">
         <optgroup label="Lớp 10">
@@ -52,10 +52,10 @@
     </div>
   </div>
   <div class="hs__content row">
-    <div class="col-sm-12 text-right">
+    <!-- <div class="col-sm-12 text-right">
       <button id="btn_add" class="btn btn-success"><a href="addquiz" style="text-decoration:none;color: red;">Thêm bài trắc nghiệm</a></button>
-    </div>
-    <h3 class="grid-subject-title">CÁC NỘI DUNG ĐANG CÓ</h3>
+    </div> -->
+    <h3 class="grid-subject-title">CÁC BÀI TRẮC NGHIỆM ĐÃ TẠO</h3>
     <div class="data-item-wrapper">
       <div class="grid-subjects">
         <!-- <div class="grid-item">
@@ -135,10 +135,13 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/SubjectSlider.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/Pagination.js"></script>
+<!-- <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/SubjectSlider.js"></script> -->
+<!-- <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Home/Pagination.js"></script> -->
 <script type="text/javascript" src="<?= base_url() ?>/app/js/Coach/quiz_pagination.js"></script>
 
 <script>
-
+  function test(qid) {
+    /* window.location = 'editquiz'; */
+    window.location = 'editQuiz?qid=' + qid;
+  }
 </script>

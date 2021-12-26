@@ -3,10 +3,10 @@ $(document).ready(function () {
     var StudentChoice = [];
 
     var QuestionPointer = { index: "" };
-    var remainingHour = parseInt($('#hour').text());
-    var remainingMinute = parseInt($('#minute').text());
-    var remainingSecond = parseInt($('#second').text());
-    var remainingTimeInSecond = takeDurationInSecond(remainingHour, remainingMinute, remainingSecond);
+    // var remainingHour = parseInt($('#hour').text());
+    // var remainingMinute = parseInt($('#minute').text());
+    // var remainingSecond = parseInt($('#second').text());
+    // var remainingTimeInSecond = takeDurationInSecond(remainingHour, remainingMinute, remainingSecond);
 
     $('.quiz-info').each(function (index) {
         QuizList.push({
@@ -16,9 +16,24 @@ $(document).ready(function () {
             'optb': $(this).children('#ques-optb').text(),
             'optc': $(this).children('#ques-optc').text(),
             'optd': $(this).children('#ques-optd').text(),
-
+            'quiztime': $(this).children('#quiz-time').text(),
         })
     })
+
+    var time = QuizList[0].quiztime;
+    time = 1;
+  
+    var hourTime = parseInt(time/60);
+    console.log('gioi lam bai: ' + hourTime);
+    $('#hour').text(hourTime)
+    var minuteTime = ((time/60) - parseInt(time/60)) * 60;
+    console.log('phut lam bai: ' + minuteTime);
+    $('#minute').text(minuteTime);
+
+    var remainingHour = parseInt($('#hour').text());
+    var remainingMinute = parseInt($('#minute').text());
+    var remainingSecond = parseInt($('#second').text());
+    var remainingTimeInSecond = takeDurationInSecond(remainingHour, remainingMinute, remainingSecond);
 
     console.log(QuizList[0].content);
 
@@ -155,6 +170,7 @@ function checkResult(quizTotal, submittedAnswerList){
             dataType: 'json',
             data: {'quizID': quizID, 'answerList': submittedAnswerList, 'quesNum': quizTotal, 'userID': userID},
             success: function(data){
+                data = Math.round(data * 100) / 100
                 console.log("Kết quả của bạn là: " + data);
                 alert('Kết quả làm bài của bạn là: ' + data + ' điểm');
             }
@@ -317,10 +333,21 @@ function loadQuestion(questionContent) {
 }
 
 function loadOption(opta, optb, optc, optd, choosenOpt) {
-    $('#opta h2').text('A) ' + opta);
-    $('#optb h2').text('B) ' + optb);
-    $('#optc h2').text('C) ' + optc);
-    $('#optd h2').text('D) ' + optd);
+
+    var a = katex.renderToString(opta);
+    var b = katex.renderToString(optb);
+    var c = katex.renderToString(optc);
+    var d = katex.renderToString(optd);
+
+    // $('#opta h2').text('A) ' + a);
+    // $('#optb h2').text('B) ' + b);
+    // $('#optc h2').text('C) ' + c);
+    // $('#optd h2').text('D) ' + d);
+
+    $('#opta h2').html(a);
+    $('#optb h2').html(b);
+    $('#optc h2').html(c);
+    $('#optd h2').html(d);
 
     hightlightChoosenOption(choosenOpt);
 }

@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body style="background-color: #eee;">
   <!-- Load the Sidebar that is static and was used by all pages -->
   <div class="sidebar close">
     <div class="logo-details">
@@ -71,7 +71,7 @@
           <li><a class="link_name" href="#">Analytics</a></li>
         </ul>
       </li>
-      <li class="navigation-item" id="Account">
+      <!-- <li class="navigation-item" id="Account">
         <a href="account">
           <i class="bx bxs-user-circle"></i>
           <span class="link_name">Tài khoản</span>
@@ -79,7 +79,7 @@
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Cài đặt</a></li>
         </ul>
-      </li>
+      </li> -->
       <!-- <li>
           <div class="iocn-link">
             <a href="#">

@@ -29,4 +29,15 @@ class QuestionModel extends Model
         } */
         return $data;
     }
+
+    public function getQuizByID($quizID)
+    {
+        $query = $this->db->query("select * from multiplechoice where id = " . $quizID . ";");
+        $data = $query->getResult('array');
+        /* foreach ($data as $row) {
+
+            echo $row['filter'];
+        } */
+        return $data;
+    }
 }

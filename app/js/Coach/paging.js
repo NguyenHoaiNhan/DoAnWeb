@@ -58,7 +58,9 @@ $(document).ready(function () {
 
         )
     }
-    function prepareQuestion1(id, question, filter, A, B, C, D) {
+
+
+    function prepareQuestion1(id, question, A, B, C, D) {
         var k_question = katex.renderToString(question);
         var k_A = katex.renderToString(A);
         var k_B = katex.renderToString(B);
@@ -67,9 +69,8 @@ $(document).ready(function () {
         var item = `
                     <li class="q-item" style="padding-left: 10px;">           
                         <div id="filter">
-                            <h4 style="display: inline-block">` + filter + `</h4>
-                            <a id = `+ id + ` class="btn btn-success float-right" onclick="test(this.id)">Sửa</a>
-                            <a id = `+ id + ` class="btn btn-danger float-right del" onclick="test1(this.id)">Xóa</a>
+                        <a id = `+ id + ` class="btn btn-success" style="padding-left: 300px;" onclick="test(this.id)">Sửa</a>
+                        <a id = `+ id + ` class="btn btn-danger float-right del" onclick="test1(this.id)">Xóa</a>
                         </div>
                         <div class="qtion">
                             <h5>Câu hỏi: </h5><p>` + k_question + `</p>                           
@@ -96,12 +97,14 @@ $(document).ready(function () {
     }
 
     function load_data(limit, start) {
+        var userID = localStorage.getItem('currentUID');
         var data_length;
         $.ajax({
             url: "/question",
+            // url: "question",
             method: "POST",
             dataType: 'json',
-            data: { limit: limit, start: start },
+            data: { limit: limit, start: start, userID: userID},
             success: function (data) {
                 data_length = Object.keys(data).length;
                 console.log('Da lay ' + data_length);
@@ -110,7 +113,7 @@ $(document).ready(function () {
                     action = 'active';
                 } else {
                     data.forEach(function (obj) {
-                        prepareQuestion(obj.id, obj.question, obj.filter, obj.A, obj.B, obj.C, obj.D);
+                        prepareQuestion(obj.id, obj.question, obj.A, obj.B, obj.C, obj.D);
                         action = 'inactive';
                     });
                 }
@@ -120,7 +123,7 @@ $(document).ready(function () {
     load_data();
 
 
-    function prepareQuestion(id, question, filter, A, B, C, D) {
+    function prepareQuestion(id, question, A, B, C, D) {
         var k_question = katex.renderToString(question);
         var k_A = katex.renderToString(A);
         var k_B = katex.renderToString(B);
@@ -128,13 +131,14 @@ $(document).ready(function () {
         var k_D = katex.renderToString(D);
         var item = `
                     <li class="q-item" style="padding-left: 10px;">           
-                        <div id="filter">
-                            <h4 style="display: inline-block">` + filter + `</h4>
-                            <a id = `+ id + ` class="btn btn-success float-right" onclick="test(this.id)">Sửa</a>
-                            <a id = `+ id + ` class="btn btn-danger float-right del" onclick="test1(this.id)">Xóa</a>
-                        </div>
+                       
                         <div class="qtion">
-                            <h5>Câu hỏi: </h5><p>` + k_question + `</p>                           
+
+                            <h5 style="display: inline-block;">Câu hỏi: </h5>
+                            <a id = `+ id + ` class="btn btn-success float-right" style="margin-left: 1014px;margin-top: 10px;" onclick="test(this.id)">Sửa</a>
+                            <a id = `+ id + ` class="btn btn-danger float-right del"  style="margin-top: 10px;" onclick="test1(this.id)">Xóa</a> 
+                            <p>` + k_question + `</p>   
+                                                  
                         </div>
                         
                         <div id="option-a">

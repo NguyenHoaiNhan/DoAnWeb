@@ -18,7 +18,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.js" integrity="sha384-lhN3C1JSmmvbT89RGOy6nC8qFBS8X/PLsBWIqiNdD4WGNsYOWpS2Il0x4TBrK8E2" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: #eee;">
     <div class="sidebar close">
         <div class="logo-details">
             <i class="bx bx-chevrons-right"></i>
@@ -79,15 +79,15 @@
                     <li><a class="link_name" href="#">Analytics</a></li>
                 </ul>
             </li> -->
-            <li>
-                <a href="<?= base_url() ?>/app/Views/Coach/account.php">
+            <!-- <li>
+                <a>
                     <i class="bx bxs-user-circle"></i>
                     <span class="link_name">Tài khoản</span>
                 </a>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="#">Cài đặt</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li>
                 <div class="profile-details">
                     <div class="profile-content">

@@ -1,10 +1,12 @@
 $(document).ready(function () {
+    var arr1 = localStorage.getItem('storeID');
+    arr1 = JSON.parse(arr1);
     function load_data() {
         $.ajax({
             url: "/previewquiz",
             method: "POST",
             dataType: 'json',
-            data: { 'arr': arr, },
+            data: { 'arr1': arr1, },
             success: function (data) {
                 console.log(data);
                 data.forEach(function (obj) {
