@@ -16,17 +16,16 @@ class User_model extends Model
     public function createUser($username, $pass, $name, $iscoach)
     {
         $query = $this->db->query("
-            INSERT INTO user(name, account, password, isCoach) VALUES ('".$username."', '".$name."', '".$pass."', '".$iscoach."')
+            INSERT INTO user(name, account, password, isCoach) VALUES ('".$name."', '".$username."', '".$pass."', '".$iscoach."')
         ");
-        $data = $query->getResult('array');
-        return $data;
     }
 
 
-    public function getAll()
-    {
-        $query = $this->db->query("select id userid, isCoach iscoach, account username, password pass from user");
-        return $query;
-    }
+    // public function getAll()
+    // {
+    //     $query = $this->db->query("select id userid, isCoach iscoach, account username, password pass from user");
+    //     return $query;
+    // }
+
 
 }

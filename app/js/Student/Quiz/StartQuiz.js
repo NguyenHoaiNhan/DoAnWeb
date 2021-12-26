@@ -71,11 +71,12 @@ $(document).ready(function () {
     $('#btn_cancel').click(function(){
         hideInfo();
         setTimeout(function(){
-            if(StudentChoice.length == 0){
-                alert('Quá trình làm của bạn sẽ mất!\nBạn chắc chứ?');
-            }else{
-                cancelQuiz();
-            }
+            // if(StudentChoice.length == 0){
+            //     alert('Quá trình làm của bạn sẽ mất!\nBạn chắc chứ?');
+            // }else{
+            //     cancelQuiz();
+            // }
+            cancelQuiz();
         }, 10);
         setTimeout(function(){
             unhideInfo();
@@ -142,22 +143,24 @@ function checkResult(quizTotal, submittedAnswerList){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const quizID = urlParams.get('id');
+    const userID = localStorage.getItem('currentUID');
 
     if(submittedAnswerList.length == 0){
-        alert('Bạn đã hoàn thành bài trắc nghiệm với kết quả: 0/' + quizTotal);
+        alert('Bạn chưa chọn đáp nào! Hãy bắt đầu lại!');
+        location.href = "home";
     }else{
         $.ajax({
             type: 'POST',
             url: 'submitquiz',
             dataType: 'json',
-            data: {'quizID': quizID, 'answerList': submittedAnswerList},
+            data: {'quizID': quizID, 'answerList': submittedAnswerList, 'quesNum': quizTotal, 'userID': userID},
             success: function(data){
-                // console.log("Kết quả của bạn là: " + data);
-               alert('Bạn đã hoàn thành bài trắc nghiệm với kết quả: ' + data + "/" + quizTotal);
+                console.log("Kết quả của bạn là: " + data);
+                alert('Kết quả làm bài của bạn là: ' + data + ' điểm');
             }
         })
+        location.href = "result?id=" + quizID;
     }
-    location.href = "result?id=" + quizID;
 }
 
 // CHỌN ĐÁP ÁN

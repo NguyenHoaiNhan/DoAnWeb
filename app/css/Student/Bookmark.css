@@ -440,7 +440,7 @@ body{
   gap: 1%;
 }
 
-#btn_join, #btn_remove{
+.btn_join, .btn_remove{
   width: 100px;
   height: 35px;
   border-radius: 10px;
@@ -453,12 +453,12 @@ body{
   color: tomato;
 }
 
-#btn_remove:hover{
+.btn_remove:hover{
   background-color: tomato;
   color: white;
 }
 
-#btn_join:hover{
+.btn_join:hover{
   background-color: tomato;
   color: white;
 }

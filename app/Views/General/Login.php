@@ -98,6 +98,7 @@
             })
 
             $('#btn_register').click(function() {
+                console.log('call ajax...');
                 // alert(getNewUserName() + " " + getPass1() + ' ' + getPass2() + ' ' + getFullName() + " " + isCoach());
                 var username = getNewUserName();
                 var pass1 = getPass1();
@@ -107,16 +108,21 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "login",
+                    url: "signup",
                     dataType: 'json',
                     data: {
                         username: username,
                         pass1: pass1,
                         fullname: fullname,
-                        iscoach: iscoach  
+                        iscoach: iscoach
                     },
                     success: function(data) {
-                        console.log(data);
+                        console.log('Kết quả trả về register: ' + data);
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(xhr.responseText);
+                        console.log(thrownError);
                     }
                 });
             })
@@ -142,12 +148,12 @@
                 return $("#regpass2").val();
             }
 
-            function getFullName(){
+            function getFullName() {
                 return $('#fullname').val();
             }
 
-            function isCoach(){
-                if($("#isCoach").is(':checked')){
+            function isCoach() {
+                if ($("#isCoach").is(':checked')) {
                     return 1;
                 }
                 return 0;

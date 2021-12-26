@@ -48,6 +48,110 @@ class Quiz_model extends Model
         return $data;
     }
 
+    function getBookmarkedQuiz($userID)
+    {
+        $query = $this->db->query("
+            select m.title, m.description, m.id, m.total, m.time
+            from user u, interaction i, multiplechoice m
+            where i.favorite = '1' and u.id = i.uid and i.mcid = m.id and u.id = '".$userID."';
+        ");
+        $data = $query->getResult('array');
+        return $data;
+    }
+
+    public function bookmarkQuiz($userID, $quizID)
+    {
+        $query = $this->db->query("insert into interaction(uid, mcid, favorite) values('".$userID."','".$quizID."','1');");
+    }
+
+    public function bookmarkQuizByUpdate($userID, $quizID)
+    {
+        $query = $this->db->query("
+            update interaction 
+            set favorite = '1'
+            where uid = '".$userID."' and mcid = '".$quizID."'");
+    }
+
+    public function removeFromBookmark($userID, $quizID)
+    {
+        $query = $this->db->query("
+            update interaction 
+            set favorite = '0'
+            where uid = '".$userID."' and mcid = '".$quizID."';");
+    }
+
+    public function searchQuiz($filter, $text)
+    {
+        $data = '';
+        if($filter == 'all'){
+            $query = $this->db->query("
+                select id, title, description, time, total from multiplechoice where lower(title) like '%".$text."%'
+                union 
+                select id, title, description, time, total from multiplechoice where lower(description) like '%".$text."%'");
+            $data = $query->getResult('array');
+        }else{
+            if($text == ''){
+                $query = $this->db->query("select id, title, description, time, total from multiplechoice where filter = '".$filter."'");
+                $data = $query->getResult('array');
+            }else{
+                $query = $this->db->query("
+                    select id, title, description, time, total from multiplechoice where lower(title) like '%".$text."%' and filter = '".$filter."'
+                    union 
+                    select id, title, description, time, total from multiplechoice where lower(description) like '%".$text."%' and filter = '".$filter."'");
+                $data = $query->getResult('array');
+            }
+        }
+
+        return $data;
+    }
+
+
+    // kiểm tra xem user, quiz có trong bảng interactio hay chưa
+    public function isExistsInInteraction($quizID, $userID)
+    {
+        $query = $this->db->query("
+            select *
+            from interaction 
+            where uid = '".$userID."' and mcid = '".$quizID."'");
+        $data = $query->getResult('array');
+
+        $exists = 0;
+        if(count($data) != 0){
+            $exists = 1;
+        }
+
+        // return 0 nếu không tồn tại, 1 nếu tồn tại
+        return $exists;
+    } 
+
+    public function isQuizDoneByUser($quizID, $userID)
+    {
+        $query = $this->db->query("
+            select done
+            from interaction 
+            where uid = '".$userID."' and mcid = '".$quizID."'");
+        $data = $query->getResult('array');
+
+        $value = '';
+        foreach($data as $row){
+            $value = $row['done'];
+        }
+        return $value;
+    }
+
+    public function addScoreToUser($userID, $quizID, $score)
+    {
+        $query = $this->db->query("insert into interaction(uid, mcid, score, done) values('".$userID."', '".$quizID."', '".$score."', '1');");
+    }
+
+    public function addScoreToUserByUpdate($userID, $quizID, $score)
+    {
+        $query = $this->db->query("
+            update interaction 
+            set score = '".$score."', done = '1'
+            where uid = '".$userID."' and mcid = '".$quizID."'");
+    }
+
     // -----------------------------------------------------------------------------------------
 
     public function fetch_question($limit, $start)

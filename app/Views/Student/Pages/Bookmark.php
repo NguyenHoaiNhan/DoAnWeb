@@ -9,7 +9,8 @@
     </div>
     <div class="hs__content">
       <ul class="bookmark-list">
-        <li>
+        <!-- <li>
+          <div class="quiz-id-value" style="display: none;"><p>id01</p></div>
           <div class="bookmark-item-name">
             <div class="quiz-channel-icon">
               <img src="../../Assets/avatar-icon.jpg" alt="" />
@@ -21,20 +22,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -54,20 +71,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -87,20 +120,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -120,20 +169,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -153,20 +218,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -186,20 +267,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -219,20 +316,36 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
@@ -252,27 +365,46 @@
           </div>
           <div class="bookmark-item-info">
             <div class="info-col">
-              <div class="col-name"><p>SỐ CÂU</p></div>
-              <div class="col-val"><h2>50 câu</h2></div>
+              <div class="col-name">
+                <p>SỐ CÂU</p>
+              </div>
+              <div class="col-val">
+                <h2>50 câu</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THỜI LƯỢNG</p></div>
-              <div class="col-val"><h2>30 phút</h2></div>
+              <div class="col-name">
+                <p>THỜI LƯỢNG</p>
+              </div>
+              <div class="col-val">
+                <h2>30 phút</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>ĐIỂM CAO NHẤT</p></div>
-              <div class="col-val"><h2>9.8</h2></div>
+              <div class="col-name">
+                <p>ĐIỂM CAO NHẤT</p>
+              </div>
+              <div class="col-val">
+                <h2>9.8</h2>
+              </div>
             </div>
             <div class="info-col">
-              <div class="col-name"><p>THAM GIA</p></div>
-              <div class="col-val"><h2>112 bạn</h2></div>
+              <div class="col-name">
+                <p>THAM GIA</p>
+              </div>
+              <div class="col-val">
+                <h2>112 bạn</h2>
+              </div>
             </div>
             <div class="bookmark-item-action">
               <button id="btn_join" onclick="window.alert('Bạn đã bấm thi trong bookmark')">Thi ngay</button>
               <button id="btn_remove" onclick="window.alert('Bạn đã bấm xóa item trong bookmark')">Xóa bỏ</button>
             </div>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
   </section>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="<?= base_url() ?>/app/js/Student/Bookmark/Bookmark.js"></script>

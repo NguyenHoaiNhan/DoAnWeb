@@ -47,7 +47,7 @@ class AuthenController extends BaseController
         }
     }
 
-    public function createNewUser()
+    public function signup()
     {
         $username = $_POST['username'];
         $pass1 = $_POST['pass1'];
@@ -55,8 +55,9 @@ class AuthenController extends BaseController
         $iscoach = $_POST['iscoach'];
 
         $model = new User_model();
-        $data = $model->createNewUser($username, $pass1, $fullname, $iscoach);
+        $model->createUser($username, $pass1, $fullname, $iscoach);
 
-        return json_encode($data);
+        $result = 1;
+        return json_encode($result);
     }
 }

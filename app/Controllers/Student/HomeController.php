@@ -32,4 +32,15 @@ class HomeController extends BaseController
             echo json_encode($data);
         }
     }
+
+    public function searchQuiz()
+    {
+        $filter = $_GET['filter'];
+        $text = $_GET['text'];
+
+        $model = new Quiz_model();
+        $data = $model->searchQuiz($filter, $text);
+        
+        return json_encode($data);
+    }
 }

@@ -14,11 +14,6 @@ class QuizController extends BaseController
         return view('Student/Quiz/StartQuiz', $data);
     }
 
-    public function bookmarkQuiz()
-    {
-        
-    }
-
     public function checkResultOfQuestion($QuizID, $QuestionID, $Opt)
     {
         $model = new Quiz_model();
@@ -45,12 +40,35 @@ class QuizController extends BaseController
     {
         $quizID = $_POST['quizID'];
         $submittedAnswer = $_POST['answerList'];
+        $quesNum = $_POST['quesNum'];
+        $userID = $_POST['userID'];
 
         $totalScore = 0;
         
         foreach($submittedAnswer as $row)
         {
             $totalScore += $this->checkResultOfQuestion($quizID, $row['id'], $row['opt']);
+        }
+
+        $totalScore = ($totalScore / $quesNum) * 10;
+
+        $isDone = 0;
+
+        // kiểm tra để cập nhật điểm vào trong interaction -> nếu đã có điểm rồi thì k cập nhật lại
+        $model = new Quiz_model();
+        $isExists = $model->isExistsInInteraction($quizID, $userID);
+
+        // nếu thông tin của user, quiz này chưa từng tồn tại trong interaction thì dùng insert
+        if($isExists == 0){
+            $model->addScoreToUser($userID, $quizID, $totalScore);
+            $totalScore = 'them thanh cong';
+        }else{
+            // nếu thông tin đã tồn tại mà done = 0 thì dùng hàm update
+            $isDone = $model->isQuizDoneByUser($quizID, $userID);
+            if($isDone == 0)
+            {
+                $model->addScoreToUserByUpdate($userID, $quizID, $totalScore);
+            }
         }
 
         return json_encode($totalScore);

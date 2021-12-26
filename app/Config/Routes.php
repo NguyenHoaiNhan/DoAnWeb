@@ -36,6 +36,7 @@ $routes->setAutoRoute(true);
 
 // routes Hoai Nhan
 
+$routes->post('signup', 'AuthenController::signup');
 $routes->post('login', 'AuthenController::login');
 $routes->get('/', 'AuthenController::index');
 $routes->post('/student/scrollPage', 'Student\HomeController::fetch');
@@ -47,6 +48,10 @@ $routes->group('student', function ($routes) {
     $routes->get('startquiz', 'Student\QuizController::startQuiz');
     $routes->post('submitquiz', 'Student\QuizController::checkResult');
     $routes->get('result', 'Student\QuizController::showResult');
+    $routes->post('getbookmark','Student\BookmarkController::getBookmarkedQuiz');
+    $routes->post('bookmarkquiz','Student\BookmarkController::bookmarkQuiz');
+    $routes->post('removebookmark','Student\BookmarkController::removeFromBookmark');
+    $routes->get('searchquiz','Student\HomeController::searchQuiz');
 });
 
 // routes Tan Nga

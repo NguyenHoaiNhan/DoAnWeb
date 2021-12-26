@@ -42,10 +42,10 @@ $(document).ready(function () {
                 console.log(data);
                 var DataLength = Object.keys(data).length;
                 testDB = data;
-                if(DataLength == 0){
+                if (DataLength == 0) {
                     $('.loading-items-space').html('<h4 style="font-size: 14px; text-align: center;font-weight: 800;">Xin lỗi nhưng không còn bài trắc nghiệm nào khác!</h4>');
-                        action = 'active';
-                }else{
+                    action = 'active';
+                } else {
                     data.forEach(function (obj) {
                         prepareItemData(obj.id, obj.description, obj.title, obj.total, obj.time, obj.participant);
                         action = 'inactive';
@@ -93,17 +93,12 @@ $(document).ready(function () {
                                 </div>
                             </div>
         `;
-        $('.grid-subjects').append(item);
+        $('#list-all-quiz').append(item);
     }
 
-    // $('.btn_join').click(function(){
-    //     var getUrl = window.location;
-    //     // var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    //     var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
-    //     var DestinationScript = baseUrl + "app/js/Student/Home/StudentActions.js";
-    //     alert(DestinationScript);
-    // });
 });
+
+
 
 
 
